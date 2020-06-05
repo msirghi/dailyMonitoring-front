@@ -1,0 +1,98 @@
+<mat-nav-list>
+  <h3 class="logo">
+    <a routerLink="/dashboard">
+      <img class="main-logo" alt="logo" height="100" src="assets/logo_transparent_2.png"/>
+    </a>
+  </h3>
+
+  <mat-divider></mat-divider>
+
+  <div class="nav-links">
+    <a
+      mat-list-item
+      routerLinkActive="list-item-active"
+      routerLink="/account"
+      [routerLinkActive]="['is-active']"
+    >
+      <mat-icon color="primary">account_circle</mat-icon>
+      Account
+    </a>
+    <a
+      mat-list-item
+      routerLinkActive="list-item-active"
+      routerLink="/dashboard"
+      [routerLinkActive]="['is-active']"
+    >
+      <mat-icon color="primary">dashboard</mat-icon>
+      Dashboard
+    </a>
+    <a
+      mat-list-item
+      routerLinkActive="list-item-active"
+      routerLink="/todo"
+      [routerLinkActive]="['is-active']"
+    >
+      <mat-icon color="primary">format_list_bulleted</mat-icon>
+      Your tasks
+    </a>
+
+    <a mat-list-item (click)="toggleProjectList()">
+      <mat-icon *ngIf="projectsAnimationState === 'initial'" color="primary">keyboard_arrow_right</mat-icon>
+      <mat-icon *ngIf="projectsAnimationState !== 'initial'" color="primary">keyboard_arrow_down</mat-icon>
+      Projects
+    </a>
+    <mat-divider></mat-divider>
+
+    <ul
+      [@changeDivSize]="projectsAnimationState"
+      cdkDropList
+      #list="cdkDropList"
+      [cdkDropListData]="projects"
+      (cdkDropListDropped)="onDrop($event)"
+    >
+      <li
+        *ngFor="let project of projects; let i = index;"
+        class="unselectable"
+        cdkDrag
+        #cdkDropList
+        (cdkDragStarted)="dragStart($event, project)"
+        (cdkDragMoved)="dragMoved($event, project, i)"
+      >
+        <a
+          mat-list-item
+          [routerLinkActive]="['is-active']"
+          [routerLink]="['/project', project.id]"
+        >
+          <mat-icon
+            class="sidebar-icon"
+            [ngStyle]="{ color: project.color || 'black' }"
+            color="primary"
+          >
+            fiber_manual_record
+          </mat-icon>
+          {{ project.name }}
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="addNewProject()"
+          mat-list-item
+          routerLinkActive="list-item-active"
+        >
+          <mat-icon color="primary">add</mat-icon>
+          <span>Add project</span>
+        </a>
+      </li>
+    </ul>
+
+    <a
+      mat-list-item
+      routerLinkActive="list-item-active"
+      routerLink="/settings"
+      [routerLinkActive]="['is-active']"
+    >
+      <mat-icon color="primary">settings</mat-icon>
+      Settings
+    </a>
+  </div>
+</mat-nav-list>

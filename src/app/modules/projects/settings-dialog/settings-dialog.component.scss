@@ -1,0 +1,93 @@
+.content-wrapper {
+  margin-top: 2rem;
+}
+
+.loader {
+  position: absolute;;
+  top: 44%;
+  left: 45%;
+}
+
+.delete-project {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.users__list {
+  //margin-top: 1rem;
+
+  & .members {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+
+    & span {
+      margin-left: .5rem;
+    }
+  }
+
+  & .wrapper {
+    margin-top: 1.5rem;
+  }
+}
+
+.project--overview {
+  font-size: 2rem;
+
+  & .project-name, & .project-color {
+    display: flex;
+    align-items: center;
+
+    & mat-form-field {
+      width: 100%;
+    }
+
+    & mat-icon {
+      cursor: pointer;
+    }
+  }
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+
+  & span {
+    display: flex;
+    align-items: center;
+  }
+
+  & mat-icon {
+    padding-right: .5rem;
+  }
+
+  & .user-options {
+    margin-left: auto;
+
+    & mat-icon {
+      cursor: pointer;
+    }
+  }
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+app-color-picker {
+  width: 100%;
+}
+
+.project-color {
+  display: flex;
+  align-items: center;
+}

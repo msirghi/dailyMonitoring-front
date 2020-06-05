@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f8b05a1-0e1b-4680-b720-587e58e6d0a4" name="Default Changelist" comment="[Add]: project alerts">
+      <change afterPath="$PROJECT_DIR$/src/app/models/projectAlert.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert-creation/project-alert-creation.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert-creation/project-alert-creation.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert-creation/project-alert-creation.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert-creation/project-alert-creation.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modules/projects/projectAlerts.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layouts/default/default.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/default/default.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/material.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/material.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project/project.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project/project.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1c4a1sAOmP78c1Biz3aUXykMOD8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sense" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Users\user\Desktop\projects\dailymonitoring-front\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\projects\dailymonitoring-front\src\assets\icons" />
+      <recent name="C:\Users\user\Desktop\projects\dailymonitoring-front\src\assets" />
+      <recent name="C:\Users\user\Desktop\projects\dailymonitoring-front\src\app\assets" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Karma.PopupDialogComponent">
+    <configuration name="AppComponent.should create the app" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file-path value="$PROJECT_DIR$/src/app/app.component.spec.ts" />
+      <test-names>
+        <test-name value="AppComponent" />
+        <test-name value="should create the app" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="AppComponent.should have as title 'dashboard'" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file-path value="$PROJECT_DIR$/src/app/app.component.spec.ts" />
+      <test-names>
+        <test-name value="AppComponent" />
+        <test-name value="should have as title 'dashboard'" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="DashboardService" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file-path value="$PROJECT_DIR$/src/app/modules/dashboard.service.spec.ts" />
+      <test-names>
+        <test-name value="DashboardService" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="PopupDialogComponent" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file-path value="$PROJECT_DIR$/src/app/layouts/popup-dialog/popup-dialog.component.spec.ts" />
+      <test-names>
+        <test-name value="PopupDialogComponent" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests (dashboard)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (dashboard)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/node_modules/protractor" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Karma.PopupDialogComponent" />
+        <item itemvalue="Karma.AppComponent.should create the app" />
+        <item itemvalue="Karma.AppComponent.should have as title 'dashboard'" />
+        <item itemvalue="Karma.DashboardService" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f8b05a1-0e1b-4680-b720-587e58e6d0a4" name="Default Changelist" comment="" />
+      <created>1589790109096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589790109096</updated>
+      <workItem from="1589790128696" duration="607000" />
+      <workItem from="1589792040484" duration="29000" />
+      <workItem from="1589800948452" duration="17068000" />
+      <workItem from="1589868785245" duration="47000" />
+      <workItem from="1589868845694" duration="17090000" />
+      <workItem from="1589902353737" duration="1193000" />
+      <workItem from="1589954403264" duration="25086000" />
+      <workItem from="1589993922204" duration="9074000" />
+      <workItem from="1590056993747" duration="12389000" />
+      <workItem from="1590090440910" duration="19000" />
+      <workItem from="1590155993208" duration="7044000" />
+      <workItem from="1590232685570" duration="17396000" />
+      <workItem from="1590323974184" duration="9400000" />
+      <workItem from="1590399421094" duration="3092000" />
+      <workItem from="1590411660726" duration="13582000" />
+      <workItem from="1590475676007" duration="7207000" />
+      <workItem from="1590487980991" duration="14726000" />
+      <workItem from="1590561421757" duration="23471000" />
+      <workItem from="1590675167062" duration="11154000" />
+      <workItem from="1590823086309" duration="7063000" />
+      <workItem from="1590950117221" duration="6466000" />
+      <workItem from="1590992414645" duration="709000" />
+      <workItem from="1590996232434" duration="1334000" />
+      <workItem from="1591014860643" duration="8095000" />
+      <workItem from="1591039292796" duration="5501000" />
+      <workItem from="1591197905691" duration="4562000" />
+      <workItem from="1591215840008" duration="1990000" />
+      <workItem from="1591288703311" duration="52000" />
+      <workItem from="1591288770660" duration="161000" />
+      <workItem from="1591299909866" duration="1280000" />
+      <workItem from="1591338842804" duration="5538000" />
+      <workItem from="1591351324898" duration="23000" />
+      <workItem from="1591385641431" duration="2973000" />
+    </task>
+    <task id="LOCAL-00001" summary="[Add]: add/delete project components">
+      <created>1589808813675</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589808813675</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[Add]: first part of auth module">
+      <created>1589878450318</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589878450318</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[Add]: project color modules">
+      <created>1589973758193</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589973758193</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[Add]: project color modules &amp; refactor">
+      <created>1589984842801</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589984842802</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[Add]: no-project-activity component &amp; BE intergation">
+      <created>1590158899108</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590158899108</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[Modify]: overall redesign">
+      <created>1590241140433</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590241140433</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[Add]: night mode &amp; sidenav bar for mobile devices">
+      <created>1590483845811</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1590483845811</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[Add]: code refactor">
+      <created>1590489661709</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590489661709</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[Add]: edit task feature">
+      <created>1590952227278</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590952227278</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[Add]: project alerts">
+      <created>1591015543385</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1591015543385</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[Add]: add/delete project components" />
+    <MESSAGE value="[Add]: first part of auth module" />
+    <MESSAGE value="[Add]: project color modules" />
+    <MESSAGE value="[Add]: project color modules &amp; refactor" />
+    <MESSAGE value="[Add]: no-project-activity component &amp; BE intergation" />
+    <MESSAGE value="[Modify]: overall redesign" />
+    <MESSAGE value="[Add]: night mode &amp; sidenav bar for mobile devices" />
+    <MESSAGE value="[Add]: code refactor" />
+    <MESSAGE value="[Add]: edit task feature" />
+    <MESSAGE value="[Add]: project alerts" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Add]: project alerts" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="482" y="130" width="1063" height="713" key="#Vim_Emulation" timestamp="1591340692873">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="482" y="130" width="1063" height="713" key="#Vim_Emulation/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591340692873" />
+    <state x="669" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591340832189">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="669" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591340832189" />
+    <state x="669" y="323" key="#com.intellij.fileTypes.FileTypeChooser/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590412415154" />
+    <state x="739" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1590253313444">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="739" y="237" key="#com.intellij.ide.util.MemberChooser/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590253313444" />
+    <state x="653" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590488408977">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="653" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590488408977" />
+    <state x="711" y="276" key="FileChooserDialogImpl" timestamp="1591351345787">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="711" y="276" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591351345787" />
+    <state x="711" y="276" key="FileChooserDialogImpl/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1589871630458" />
+    <state width="1757" height="269" key="GridCell.Tab.0.bottom" timestamp="1590525632070">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.0.bottom/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
+    <state width="1757" height="269" key="GridCell.Tab.0.center" timestamp="1590525632070">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.0.center/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
+    <state width="1757" height="269" key="GridCell.Tab.0.left" timestamp="1590525632070">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.0.left/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
+    <state width="1757" height="269" key="GridCell.Tab.0.right" timestamp="1590525632070">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.0.right/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
+    <state width="1757" height="269" key="GridCell.Tab.1.bottom" timestamp="1590525632070">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.1.bottom/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
+    <state width="1757" height="269" key="GridCell.Tab.1.center" timestamp="1590525632070">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.1.center/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
+    <state width="1757" height="269" key="GridCell.Tab.1.left" timestamp="1590525632070">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.1.left/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
+    <state width="1757" height="269" key="GridCell.Tab.1.right" timestamp="1590525632070">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.1.right/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
+    <state width="1757" height="269" key="GridCell.Tab.4.bottom" timestamp="1590488502248">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.4.bottom/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590488502248" />
+    <state width="1757" height="269" key="GridCell.Tab.4.center" timestamp="1590488502248">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.4.center/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590488502248" />
+    <state width="1757" height="269" key="GridCell.Tab.4.left" timestamp="1590488502248">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.4.left/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590488502248" />
+    <state width="1757" height="269" key="GridCell.Tab.4.right" timestamp="1590488502248">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1757" height="269" key="GridCell.Tab.4.right/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590488502248" />
+    <state x="76" y="2" key="MergeDialog" timestamp="1590241254438">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="76" y="2" key="MergeDialog/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590241254438" />
+    <state x="488" y="225" width="727" height="430" key="MultipleFileMergeDialog" timestamp="1590241254444">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="488" y="225" width="727" height="430" key="MultipleFileMergeDialog/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590241254444" />
+    <state x="687" y="247" key="RollbackChangesDialog" timestamp="1590564411212">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="687" y="247" key="RollbackChangesDialog/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590564411212" />
+    <state x="435" y="166" key="SettingsEditor" timestamp="1591288755921">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="435" y="166" key="SettingsEditor/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591288755921" />
+    <state x="435" y="166" key="SettingsEditor/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590487675822" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1590583467507">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590583467507" />
+    <state x="743" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590241195795">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="743" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590241195795" />
+    <state x="190" y="115" width="1479" height="800" key="dock-window-1" timestamp="1589875134281">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="190" y="115" width="1479" height="800" key="dock-window-1/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1589875134281" />
+    <state x="642" y="121" width="585" height="801" key="find.popup" timestamp="1591388135153">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="642" y="121" width="585" height="801" key="find.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591388135153" />
+    <state x="642" y="121" width="585" height="801" key="find.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590830126286" />
+    <state x="707" y="239" key="git4idea.branch.GitSmartOperationDialog" timestamp="1589790660420">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="707" y="239" key="git4idea.branch.GitSmartOperationDialog/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1589790660420" />
+    <state x="590" y="243" key="run.anything.popup" timestamp="1591202319607">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="590" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591202319607" />
+    <state x="590" y="243" key="run.anything.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590586361510" />
+    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1591389555744">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591389555744" />
+    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590827292313" />
+  </component>
+</project>

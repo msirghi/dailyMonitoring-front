@@ -1,0 +1,57 @@
+<div class="no-statistics" *ngIf="taskCounter.totalTasks === 0">
+  <img src="https://cdn4.iconfinder.com/data/icons/ios-web-user-interface-multi-circle-flat-vol-4/512/Checklist_clipboard_inventory_list_report_tasks_todo-512.png" alt="">
+  <br>
+  Looks like there were no action within the project.
+  <br>Start completing tasks to see the statistics!
+</div>
+<div  [style.opacity]="taskCounter.totalTasks === 0 ? 0.1 : 1"
+      [style.overflow]="taskCounter.totalTasks === 0 ? 'hidden' : 'unset'"
+>
+
+  <div class="chart-wrapper" [@fadeIn]>
+    <h3>Tasks overview</h3>
+    <div class="statistics">
+      <div class="statistics numbers">
+        <div>
+          <mat-icon color="primary">subject</mat-icon>
+          Total tasks: {{ taskCounter.totalTasks }}
+        </div>
+        <div>
+          <mat-icon color="primary">done</mat-icon>
+          Total done tasks: {{ taskCounter.doneTasks }}
+        </div>
+        <div>
+          <mat-icon color="primary">notes</mat-icon>
+          Total undone tasks: {{ taskCounter.undoneTasks }}
+        </div>
+      </div>
+      <div class="chart" [@fadeIn]>
+        <highcharts-chart
+          id="container"
+          [Highcharts]="Highcharts"
+          [constructorType]="chartConstructor"
+          [options]="pieChartData"
+          [callbackFunction]="chartCallback"
+          [(update)]="updateFromInput"
+          [oneToOne]="true"
+          style="width: 100%; display: block;"
+        >
+        </highcharts-chart>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h3>Tasks Timeline</h3>
+    <div class="chart timeline" [@fadeIn] *ngIf="isTimelineChartShown">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="chartOptions1"
+        [callbackFunction]="timeLineChartCallback"
+        style="width: 100% !important; height: 100% !important; display: block;"
+      >
+      </highcharts-chart>
+    </div>
+
+  </div>
+</div>

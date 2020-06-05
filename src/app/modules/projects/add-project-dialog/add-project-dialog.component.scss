@@ -1,0 +1,47 @@
+*:not(h1) {
+  font-size: 1.8rem;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+
+  & mat-icon {
+    font-size: 2rem;
+  }
+
+  & span:nth-child(3) {
+    margin-left: auto;
+    cursor: pointer;
+  }
+}
+
+.dialog-content, mat-form-field {
+  width: 100%;
+}
+
+.right-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.loading-bar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.select-item {
+  display: flex;
+  align-items: center;
+
+  & mat-icon {
+    margin-left: auto;
+  }
+}
+
+mat-select-trigger {
+  display: flex;
+  align-items: center;
+}

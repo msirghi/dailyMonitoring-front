@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>
+  <mat-icon color="primary">emoji_events</mat-icon>
+  <span>Create new project</span>
+
+  <span>
+    <mat-icon matTooltip="What is project and how to use it?" color="primary">help_outline</mat-icon>
+  </span>
+</h1>
+
+<div class="dialog-content" (keyup)="enterHandler($event)" mat-dialog-content [formGroup]="addProjectDialogForm">
+  <p>What is the project name?</p>
+  <mat-form-field>
+    <mat-label>Project name</mat-label>
+    <input autocomplete="off" matInput formControlName="name">
+  </mat-form-field>
+</div>
+
+<div>
+  <app-color-picker
+    (colorChecked)="onColorSelect($event)"
+    [isDisabled]="false"
+    [valueSelected]="selectedColor"
+  >
+  </app-color-picker>
+</div>
+
+
+<div *ngIf="isLoading" class="loading-bar">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="right-buttons" mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close] color="accent">Cancel</button>
+  <button
+    mat-raised-button
+    (click)="onCreateHandler()"
+    [disabled]="!addProjectDialogForm.valid || !selectedColor"
+    color="primary"
+  >
+    Create
+  </button>
+</div>

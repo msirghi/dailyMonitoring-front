@@ -1,0 +1,141 @@
+<div class="loading__spinner" *ngIf="loading">
+  <mat-spinner color="accent"></mat-spinner>
+  <span> Starting in a sec... </span>
+</div>
+
+<div class="fade-in welcome-wrapper" *ngIf="!loading">
+  <app-header></app-header>
+  <div class="welcome__wrapper" #welcome>
+    <div class="welcome__subheader">
+      <div class="welcome__subheader--head animate-slide-left">
+        <mat-icon style="padding-right: 1rem" class="calendar-icon">calendar_today</mat-icon>
+        <div class="welcome__title">
+          Welcome to Daily Monitoring App
+        </div>
+      </div>
+      <div class="welcome__quote animate-slide-right">
+        <div class="quote-container">
+          <blockquote>
+            <p>{{ selectedQuote.quote }}”</p>
+          </blockquote>
+          <cite><span>{{ selectedQuote.author }}</span><br>
+          </cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-wrapper animate-slide-left">
+    <section class="about__content">
+      <div class="u-center-text u-margin-bottom-medium">
+        <h2 class="heading-secondary">
+          <mat-icon style="padding-right: 1rem;" color="primary">check</mat-icon>
+          <span class="primary-color">Why you should join us? </span>
+        </h2>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-2">
+          <img
+            class="mobile-images animate-slide-left"
+            src="https://www.howtogeek.com/wp-content/uploads/2019/07/img_5d3f4837cd8b1.jpg"
+            alt="Photo 2"
+          />
+
+          <h3 class="heading-tertiary u-margin-bottom-small primary-color text-medium align-center-vertical">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+            <span>Efficient time management</span>
+          </h3>
+          <p class="paragraph text-medium">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus nostrum recusandae facere in illum corrupti.
+          </p>
+
+          <h3 class="heading-tertiary u-margin-bottom-small primary-color text-medium align-center-vertical">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+            <span>Efficient time management</span>
+          </h3>
+          <p class="paragraph text-medium">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus nostrum recusandae facere in illum corrupti.
+          </p>
+
+          <img
+            class="mobile-images animate-slide-right"
+            src="https://www.expand-mena.com/upload/4563websiteTasks2.jpg"
+            alt="Photo 2"
+          />
+          <h3 class="heading-tertiary u-margin-bottom-small primary-color align-center-vertical">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+            <span>See your activity statistics</span>
+          </h3>
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+            inventore necessitatibus expedita nulla est tempora dolorem.
+          </p>
+
+          <h3 class="heading-tertiary u-margin-bottom-small primary-color align-center-vertical">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+            <span>Optimize your time</span>
+          </h3>
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cum delectus doloribus enim suscipit
+            tenetur?
+          </p>
+
+          <button mat-raised-button color="primary" class="btn-scaled">Learn more &rarr;</button>
+        </div>
+        <div class="col-1-of-2">
+          <div class="composition">
+            <img
+              src="../../../assets/1.jpg"
+              alt="Photo 1"
+              class="composition__photo composition__photo--p1"
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtnsVE9yotkeJFsCzB-o6Oll56HOmx7OBbpqwPd7uf5tKoEf0S&usqp=CAU"
+              alt="Photo 2"
+              class="composition__photo composition__photo--p2"
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSdK1gcUapklOigSCF9T2d4qIwdlncJk0IFgOL2H2fjpXHeaeg1&usqp=CAU"
+              alt="Photo 3"
+              class="composition__photo composition__photo--p3"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="footer-wrapper">
+    <div
+      class="footer-header"
+      inViewport
+      [inViewportOptions]="{ threshold: [0] }"
+      (inViewportAction)="onIntersectionAnimateLeft($event)"
+    >
+      <h2 class="heading-secondary">
+        <mat-icon>near_me</mat-icon>
+        Join our community
+      </h2>
+    </div>
+    <div
+      class="welcome__btns"
+      inViewport
+      [inViewportOptions]="{ threshold: [0] }"
+      (inViewportAction)="onIntersectionAnimateRight($event)"
+    >
+      <button routerLink="/login" mat-raised-button color="accent" class="welcome__btns--btn">
+        <mat-icon>account_circle</mat-icon>
+        Sign in
+      </button>
+      <button routerLink="/register" mat-raised-button color="accent" class="welcome__btns--btn">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+        Create new account
+      </button>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

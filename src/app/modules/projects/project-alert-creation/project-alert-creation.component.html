@@ -1,0 +1,47 @@
+<div class="wrapper">
+
+  <h1 mat-dialog-title>
+    <mat-icon color="primary">add_alert</mat-icon>
+    <span> New notification </span>
+  </h1>
+
+  <div mat-dialog-content [formGroup]="alertForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Message</mat-label>
+      <input formControlName="message" autocomplete="off" matInput placeholder="Message">
+    </mat-form-field>
+
+    <div class="date-type-wrapper">
+      <mat-form-field>
+        <mat-label>Expiration date</mat-label>
+        <input matInput formControlName='date' [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-hint>Date when notification will not be shown anymore</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="type-select">
+        <mat-select placeholder="Type" [(value)]="selectedType.value">
+          <mat-option *ngFor="let type of alertType" [value]="type.value" (click)="onTypeSelect(type)">
+            <span [style.color]="type.color">{{type.value}}</span>
+          </mat-option>
+        </mat-select>
+        <mat-hint>Default will be info</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="checkbox">
+      <mat-checkbox>Notify all members</mat-checkbox>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close] color="accent">Close</button>
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="editMode ? onUpdate() : onSubmit()"
+      [disabled]="!alertForm.valid || !selectedType">
+      {{editMode ? 'Update' : 'Publish'}}
+    </button>
+  </div>
+</div>

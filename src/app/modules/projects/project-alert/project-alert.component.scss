@@ -1,0 +1,63 @@
+.alert {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+  margin-top: .5rem;
+  border-radius: 1px;
+}
+
+.warning {
+  color: #000;
+  background-color: #ffaa2c;
+}
+
+.info {
+  background-color: #47a8f5;
+}
+
+.danger {
+  color: #000;
+  background-color: #f66359;
+}
+
+.success {
+  background-color: #6bbd6e;
+}
+
+.alerts-wrapper {
+  margin-top: 1rem;
+}
+
+.inline-buttons {
+  margin-top: .5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.date {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+
+  & mat-icon {
+    padding-left: .5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .alert {
+    display: grid;
+  }
+}
+
+.alert .edit-btn, .alert .close-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.alert:hover {
+  .edit-btn, .close-btn {
+    display: initial;
+  }
+}

@@ -1,0 +1,9 @@
+.middle-loader {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+
+  & img {
+    height: 15rem;
+  }
+}

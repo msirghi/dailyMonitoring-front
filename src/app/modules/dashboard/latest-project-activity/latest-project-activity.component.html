@@ -1,0 +1,57 @@
+<h3 style="justify-content: center; display: flex; align-items: center">
+  <span>Overall Project Analysis</span>
+  <mat-icon style="margin-left: 1rem;">multiline_chart</mat-icon>
+</h3>
+
+<div class="latest-activity-wrapper">
+  <div class="chart">
+    <div class="select">
+      <h3>Project chart</h3>
+    </div>
+
+    <mat-divider></mat-divider>
+    <highcharts-chart
+      [Highcharts]="Highcharts"
+      [options]="chartOptions"
+      [(update)]="updateFromInput"
+      style="height: 85%; display: block;"
+    >
+    </highcharts-chart>
+  </div>
+
+  <div style="padding: 2rem;">
+    <mat-divider vertical class="vertical-divider"></mat-divider>
+  </div>
+
+  <div class="project-activity">
+    <h3>Project activity</h3>
+    <mat-divider></mat-divider>
+    <div style="display: flex; align-items: center; margin-top: 1rem;" *ngFor="let task of lastTasks;">
+      <div style="font-size: 5rem; display: flex; align-items: center;">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Microsoft_Account.svg/1200px-Microsoft_Account.svg.png"
+          height="50" alt="">
+      </div>
+      <div class="task-wrapper">
+        <div style="display: flex;">
+          <b>{{task.userName}}</b>
+          <span style="font-family: 'Roboto',serif; font-size: 1.3rem; margin-left: auto;">
+            {{task.dateTime | date:'dd.MM.yy | h:mma'}}
+          </span>
+        </div>
+        <div class="task-project-line">
+          <span matTooltip="Navigate to project">
+            <a [routerLink]="['/project', task.projectId]">
+              <i>{{task.projectName}}: </i>
+            </a>
+          </span>
+          <span><b>{{task.task}}</b></span>
+        </div>
+      </div>
+    </div>
+    <button mat-stroked-button (click)="projectButtonHandler()" class="projects-button">
+      <mat-icon>near_me</mat-icon>
+      <span>Go to projects page</span>
+    </button>
+  </div>
+</div>

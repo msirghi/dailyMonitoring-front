@@ -1,0 +1,78 @@
+<mat-toolbar class="mat-toolbar">
+  <mat-toolbar-row class="mat-toolbar-row">
+    <div *ngIf="isButtonDisplayed">
+      <button mat-icon-button (click)="toggleSideBar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-start">
+      <button mat-icon-button (click)="navigateHome()">
+        <mat-icon matTooltip="Homepage">home</mat-icon>
+      </button>
+    </div>
+
+    <div >
+      <ul fxLayout="row" fxLayoutGap="10px">
+        <li>
+          <button mat-icon-button>
+            <mat-icon matTooltip="Quick add new task">add</mat-icon>
+          </button>
+        </li>
+        <li matTooltip="Achievements">
+          <button mat-icon-button style="display: flex; align-items: center">
+            <mat-icon>poll</mat-icon>
+            <span>1/5</span>
+          </button>
+        </li>
+        <li>
+          <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>settings</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" style="margin-right: 1rem;">
+            <div style="width: 20rem;">
+              <button (click)="navigateAccountPage()" mat-menu-item>
+                <mat-icon>account_circle</mat-icon>
+                Account
+              </button>
+              <button (click)="logout()" mat-menu-item>
+                <mat-icon>help</mat-icon>
+                Help
+              </button>
+              <button mat-menu-item>
+                <mat-slide-toggle
+                  #toggleElement
+                  [checked]="checked"
+                  (change)="toggleNightMode($event)"
+                >Night mode
+                </mat-slide-toggle>
+              </button>
+              <button (click)="logout()" mat-menu-item>
+                <mat-icon>autorenew</mat-icon>
+                Update log
+              </button>
+              <button (click)="logout()" mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                Sign out
+              </button>
+              <mat-divider></mat-divider>
+              <div class="apps" style="margin-top: 1rem; margin-bottom: 1rem;">
+                <span style="font-size: 1.4rem; margin-left: 2rem;">Apps</span>
+                <div style="margin-top: 1rem;display: flex; justify-content: space-around">
+                  <mat-icon matTooltip="Android" style="color: #3DDC84;">android</mat-icon>
+                  <mat-icon matTooltip="Desktop" color="primary">computer</mat-icon>
+                </div>
+              </div>
+              <mat-divider></mat-divider>
+              <div style="margin-top: 1rem; display: flex; align-items: center; flex-direction: column;">
+                <img src="assets/logo_transparent_2.png" alt="" height="70">
+                <span style="font-size: 1.4rem;">App version 0.1</span>
+              </div>
+            </div>
+          </mat-menu>
+
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

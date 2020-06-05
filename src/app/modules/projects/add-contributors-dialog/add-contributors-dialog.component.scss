@@ -1,0 +1,70 @@
+.content-wrapper {
+  padding-top: 2rem;
+
+  & mat-form-field {
+    font-size: 1.9rem;
+    width: 100%;
+    margin-top: -3%;
+  }
+
+  & textarea {
+    resize: none;
+  }
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  & span {
+    padding-left: 1%;
+  }
+}
+
+mat-dialog-actions {
+  //margin-top: -5%;
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 49%;
+  }
+}
+
+.full-width-button {
+  width: 100%;
+  padding-bottom: 2%;
+  margin-top: 1%;
+
+  & .mark-as-complete-button {
+    width: 100%;
+    background-color: green;
+    color: #ffffff;
+  }
+}
+
+.inline-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 2%;
+
+  & .inline-button {
+    width: 100%;
+  }
+}
+
+.email-sent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+.error-message {
+  margin-top: -1rem;
+  color: red;
+  font-size: 1.5rem;
+}

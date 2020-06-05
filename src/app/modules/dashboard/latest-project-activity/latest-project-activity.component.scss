@@ -1,0 +1,110 @@
+.chart {
+  flex: 0 0 40%;
+
+  & .select {
+    display: flex;
+    align-items: center;
+
+    & mat-form-field {
+      font-size: 1.7rem;
+      margin-left: auto;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.projects-button {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.latest-activity-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.task-wrapper {
+  margin-left: 1%;
+}
+
+@media (max-width: 400px) {
+  .task-project-line {
+    max-width: 100%;
+    min-width: initial !important;
+  }
+}
+
+@media (max-width: 1250px) {
+  .latest-activity-wrapper {
+    display: initial;
+  }
+
+  .task-wrapper {
+    width: 100%;
+  }
+
+  .vertical-divider {
+    display: none;
+  }
+
+  .project-activity {
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //align-items: center;
+  }
+}
+
+.task-project-line {
+  min-width: 40rem;
+  margin-top: 1%;
+
+  & span a {
+    transition: all .2s;
+    text-decoration: none;
+
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 90%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #3f51b5;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+
+    &:link {
+      text-decoration: inherit;
+      color: inherit;
+    }
+
+    &:visited {
+      text-decoration: inherit;
+      color: inherit;
+    }
+  }
+}
+
+.vertical-divider {
+  height: 37rem;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: #FFFF00;
+  height: 1px;
+}

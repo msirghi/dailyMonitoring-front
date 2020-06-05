@@ -1,0 +1,72 @@
+<div
+  class="create-task-form"
+  [formGroup]="newTaskForm"
+  (keyup.enter)="createTask()"
+  (keyup.escape)="expandTaskCreationHandler.emit()"
+>
+<!--  [@changeDivSize]=currentState-->
+<!--  <h4>New task</h4>-->
+  <mat-form-field appearance="outline" class="mt-3">
+    <mat-label>Your task</mat-label>
+    <input formControlName="name" matInput placeholder="E.g. Buy something" #name="matInput">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" [@changeDivSize]=descriptionAnimationState>
+    <mat-label>Task description</mat-label>
+    <textarea
+      rows="3"
+      matInput
+      placeholder="Task description"
+      formControlName="description"></textarea>
+  </mat-form-field>
+
+  <div class="inline-buttons">
+    <button
+      [disabled]="!newTaskForm.valid"
+      (click)="onSubmit()"
+      mat-button color="primary"
+    >
+      Create
+    </button>
+    <button
+      mat-button
+      color="accent"
+      (click)="expandTaskCreationHandler.emit()">
+      Cancel
+    </button>
+    <div class="left">
+      <mat-form-field>
+        <mat-icon [color]="priorityColor">outlined_flag</mat-icon>
+        <mat-select
+          matTooltip="Priority"
+          matTooltipPosition='above'
+          class="alarm-dropdown"
+          trigger="alarmTrigger"
+          #alarmSelect
+          [(value)]="prioritySelected"
+        >
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            <mat-icon [color]="food.color">outlined_flag</mat-icon>
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-icon>alarm</mat-icon>
+        <mat-select class="alarm-dropdown" trigger="alarmTrigger" #alarmSelect>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-icon (click)="toggleDescription()" *ngIf="!isDescriptionEnabled">add</mat-icon>
+        <mat-icon (click)="toggleDescription()" *ngIf="isDescriptionEnabled">remove</mat-icon>
+        <mat-select class="alarm-dropdown" trigger="alarmTrigger">
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

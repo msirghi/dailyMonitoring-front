@@ -1,0 +1,19 @@
+<div class="main__container">
+  <div class="left__container">
+    <app-register-success
+      *ngIf="accountCreated"
+      [email]="email"
+      [emailCheckInfo]="emailCheckInfo"
+      [@fadeInOut]>
+    </app-register-success>
+
+    <app-register-form
+      *ngIf="!accountCreated"
+      [accountCreated]="accountCreated"
+      [isSpinnerEnabled]="isSpinnerEnabled"
+      (onSubmit)="submitHandler($event)"
+      [error]="error"
+    ></app-register-form>
+  </div>
+  <div class="right__container"></div>
+</div>

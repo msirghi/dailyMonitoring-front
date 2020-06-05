@@ -1,0 +1,107 @@
+<h1 mat-dialog-title>
+  <mat-icon color="primary">settings</mat-icon>
+  <span>Project Settings</span>
+  <mat-icon
+    *ngIf="!deleteButtonClicked"
+    color="accent"
+    class="delete-project"
+    (click)="toggleDeleteButton()"
+    matTooltip="Delete project">
+    delete
+  </mat-icon>
+
+  <mat-icon
+    *ngIf="deleteButtonClicked"
+    class="delete-project"
+    (click)="toggleDeleteButton()"
+    matTooltip="Cancel"
+    color="accent"
+  >
+    close
+  </mat-icon>
+
+  <button (click)="onProjectDelete()"
+          [mat-dialog-close]
+          [@fadeIn]
+          *ngIf="deleteButtonClicked"
+          mat-button
+          color="accent">
+    Confirm deletion
+  </button>
+</h1>
+
+<div class="loader" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+
+<mat-dialog-content>
+  <div class="content-wrapper" [style.opacity]="isLoading ? 0.3 : 1">
+    <div class="settings project--overview">
+      <div class="project-name" [formGroup]="nameForm">
+        <mat-form-field>
+          <mat-label>Project name</mat-label>
+          <input
+            formControlName="name"
+            matInput placeholder="Project name"
+            [disableControl]="isProjectNameInputDisabled">
+        </mat-form-field>
+        <mat-icon
+          matTooltip="Edit project name"
+          [color]="isProjectNameInputDisabled ? 'primary': 'accent'"
+          (click)="toggleProjectNameInput()">edit
+        </mat-icon>
+      </div>
+
+      <div class='project-color'>
+        <app-color-picker
+          [isDisabled]="isProjectColorInputDisabled"
+          (colorChecked)="onColorSelect($event)"
+          [valueSelected]="selectedColor"
+        ></app-color-picker>
+        <mat-icon
+          matTooltip="Change project color"
+          [color]="isProjectColorInputDisabled ? 'primary': 'accent'"
+          (click)="toggleProjectColorInput()">edit
+        </mat-icon>
+      </div>
+    </div>
+
+    <div class="settings users__list">
+      <div class="users__list members">
+        <mat-icon color="primary">people</mat-icon>
+        <span> Members </span>
+      </div>
+      <mat-divider></mat-divider>
+
+      <div class="users__list wrapper">
+        <div *ngFor="let user of users; let i = index;" class="user-item">
+          <span> <mat-icon color="primary">perm_identity</mat-icon>
+            {{ user.fullName }} </span>
+          <div class="user-options">
+            <mat-icon color="primary" [matTooltip]="'Mail to '+user.email" (click)="mailUser(user.email)">email
+            </mat-icon>
+            <mat-icon
+              color="accent"
+              [matTooltip]="'Remove '+user.fullName + ' from the project'"
+              (click)="onUserRemove(user)"
+            >delete
+            </mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="inline-buttons">
+    <button class="inline-button" mat-raised-button color="accent" [mat-dialog-close]="false">Close</button>
+    <button
+      class="inline-button"
+      mat-raised-button color="primary"
+      [mat-dialog-close]="getFinalData()"
+    >
+      Save
+    </button>
+  </div>
+</mat-dialog-actions>

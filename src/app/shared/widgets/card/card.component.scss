@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url(https://fonts.gstatic.com/s/materialicons/v21/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2');
+}
+
+* {
+  transition: all .2s;
+}
+
+//* {
+//  font-family: "Raleway", Roboto, "Helvetica Neue", sans-serif;
+//}
+
+.card-numbers {
+  display: flex;
+  align-items: center;
+
+  & .icon {
+    margin-left: auto;
+  }
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.total {
+  font-size: 3em;
+}
+
+.mat-icon,
+.description {
+  color: green;
+  font-size: 2em;
+}
+
+.mat-icon {
+  position: relative;
+  padding: 0 20px;
+  top: 5px;
+}

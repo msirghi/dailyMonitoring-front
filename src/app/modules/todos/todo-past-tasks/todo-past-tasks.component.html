@@ -1,0 +1,24 @@
+<div style="">
+  <h4 style="display: flex; align-items: center">
+    <mat-icon color="accent">gesture</mat-icon>
+    Your five last completed tasks
+  </h4>
+  <mat-divider></mat-divider>
+  <div class="past-tasks">
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let task of tasksDone;" class="fade-in" [@fadeIn]>
+        <div style="display: flex; align-items: center; width: 100%">
+          <mat-icon style="padding-right: .5rem; color:green">done</mat-icon>
+          {{task.name}}
+          <div style="display: flex; align-items: center; margin-left: auto; font-size: 1.3rem; opacity: 0.7">
+            <mat-icon style="font-size: 1.6rem; display: flex; align-items: center;">
+              access_time
+            </mat-icon>
+            today at 13:42
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<button *ngIf="!areStatisticsShown" mat-button (click)="toggleChart()">
+  <mat-icon color="primary">timeline</mat-icon>
+  <span>Statistics</span>
+</button>
+<button *ngIf="areStatisticsShown" mat-button (click)="toggleChart()">
+  <mat-icon color="primary">done</mat-icon>
+  <span>Tasks</span>
+</button>
+<button mat-button (click)="toggleCollaboratorsWindow($event)">
+  <mat-icon color="primary">add</mat-icon>
+  <span>Add collaborator</span>
+</button>
+<button mat-button class="settings-button" (click)="toggleSettingsDialog($event)">
+  <mat-icon color="primary">settings</mat-icon>
+  <span>Settings</span>
+</button>

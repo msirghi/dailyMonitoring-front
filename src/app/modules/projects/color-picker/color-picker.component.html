@@ -1,0 +1,17 @@
+<div [formGroup]="colorForm">
+  <mat-form-field style="width: 100%">
+    <mat-label>Project label color</mat-label>
+    <mat-select formControlName="color">
+      <mat-select-trigger>
+        <span>  {{selectedColor.viewValue}} </span>
+        <mat-icon [ngStyle]="{'color': selectedColor.color}">fiber_manual_record</mat-icon>
+      </mat-select-trigger>
+      <mat-option *ngFor="let color of colors" [value]="selectedColor" (click)="onCheckColor(color)">
+        <div class="select-item">
+          {{color.viewValue}}
+          <mat-icon [ngStyle]="{'color': color.color}">fiber_manual_record</mat-icon>
+        </div>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

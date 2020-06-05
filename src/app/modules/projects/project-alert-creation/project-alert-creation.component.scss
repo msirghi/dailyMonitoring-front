@@ -1,0 +1,48 @@
+.wrapper {
+  font-size: 1.6rem;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.type-select {
+  margin-left: 1.3rem;
+}
+
+.date-type-wrapper {
+  display: flex;
+}
+
+.mat-dialog-content {
+  height: 21rem;
+}
+
+.checkbox {
+  margin-top: 2.3rem;
+}
+
+@media (max-width: 786px) {
+  .date-type-wrapper {
+    display: initial;
+  }
+
+  .type-select {
+    margin: initial;
+  }
+
+  .mat-dialog-content {
+    height: auto !important;
+  }
+}
+
+.mat-dialog-title {
+  display: flex;
+  align-items: center;
+}

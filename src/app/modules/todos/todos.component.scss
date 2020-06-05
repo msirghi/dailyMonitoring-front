@@ -1,0 +1,197 @@
+:host {
+  ::ng-deep.mat-pseudo-checkbox {
+    display: none !important;
+  }
+}
+
+::ng-deep .custom-frame {
+  & .mat-checkbox-background, .mat-checkbox-frame {
+    border-radius: 70% !important;
+  }
+}
+
+.title {
+  &__your-tasks, &__current-tasks, &__past-tasks {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.progress-bar-wrapper {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.progress-bar {
+  width: 45%;
+
+  & span {
+    color: #3f51b5;
+  }
+}
+
+.mt-5 {
+  margin-top: 5%;
+}
+
+.mt-3 {
+  margin-top: 3%;
+}
+
+.current-tasks {
+  margin: 1% auto 0;
+  width: 70%;
+
+  &__no-tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      margin-top: 2%;
+      font-size: 2rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    & mat-icon {
+      padding-right: .5rem;
+      color: #3f51b5;
+    }
+
+    &__options {
+      display: flex;
+      margin-left: auto;
+      font-size: 1.3rem;
+      pointer-events: auto;
+    }
+  }
+
+  & mat-selection-list {
+    & mat-list-option {
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        transform: scaleX(1.008);
+      }
+    }
+  }
+}
+
+.new-task {
+  margin-top: 1.25rem;
+
+  &__add-button {
+    width: 100%;
+  }
+}
+
+.past-tasks {
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &--right-icon {
+      padding-right: .5rem;
+      color: green;
+    }
+
+    &--options {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      font-size: 1.3rem;
+      opacity: 0.7;
+
+      & mat-icon {
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  mat-list-item {
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}
+
+.fade-in {
+  -webkit-animation: fadein .5s;
+  -moz-animation: fadein .5s;
+  -ms-animation: fadein .5s;
+  -o-animation: fadein .5s;
+  animation: fadein .5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.4em 0px !important;
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+  top: -1.5em;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.1em) scale(.75);
+  width: 133.33333%;
+}

@@ -1,0 +1,30 @@
+<div class="task-form-wrapper">
+<!--  <img-->
+<!--    class="task-image"-->
+<!--    src="https://pluspng.com/img-png/task-png-tasks-icon-image-17815-1024.png"-->
+<!--    alt="Task image">-->
+  <form
+    class="example-form"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    [formGroup]="taskCreationForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field class="example-full-width"  appearance="outline">
+      <mat-label>Task name</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="taskName">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Please enter a valid task name.</mat-hint>
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      class="task-submit__btn"
+      [disabled]="taskCreationForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

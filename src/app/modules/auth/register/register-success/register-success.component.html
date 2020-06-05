@@ -1,0 +1,21 @@
+<div class="confirmation">
+  <img
+    src="https://i.pinimg.com/originals/8c/95/7b/8c957b1d5b6262dd171f288eeadcabd7.gif"
+    alt="">
+  <div class="confirmation confirmation--message">
+    We've sent to you message with confirmation link to
+    <br />
+    <span>{{ email }}</span>
+    <br />
+    <div class="confirmation confirmation--email-known" *ngIf="emailCheckInfo.isShown">
+      <button
+        class="confirmation confirmation--email-known email-known__button"
+        color="accent"
+        mat-raised-button
+        (click)="redirectToMailSite()">
+        <span>Check {{ emailCheckInfo.site }}</span>
+      </button>
+    </div>
+    <button color="primary" mat-raised-button (click)="redirectHome()">Back to home</button>
+  </div>
+</div>

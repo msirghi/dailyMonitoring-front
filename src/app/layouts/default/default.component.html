@@ -1,0 +1,23 @@
+<app-header [isButtonDisplayed]="!isShown" (sidenavToggle)="sidenav.toggle()"></app-header>
+<div class="loader-spinner" *ngIf="!isTokenObtained">
+  <mat-spinner></mat-spinner>
+  <span>Loading...</span>
+</div>
+
+<mat-sidenav #sidenav mode="over" style="width: 20rem" [style.visibility]="!isShown ? 'visible' : 'none'">
+  <app-side-nav-list (closeSidenav)="sidenav.close()"></app-side-nav-list>
+</mat-sidenav>
+
+<mat-sidenav-container *ngIf="isTokenObtained" (click)="sidenav.close()">
+  <mat-drawer-container>
+
+    <mat-drawer mode="side" [opened]="isShown">
+      <app-sidebar></app-sidebar>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+
+  </mat-drawer-container>
+</mat-sidenav-container>

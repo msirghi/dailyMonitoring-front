@@ -1,0 +1,113 @@
+<div *ngIf="isTopLoaderEnabled">
+  <app-top-loader></app-top-loader>
+</div>
+
+<div style="padding: 20px;">
+
+  <div class="users__edit">
+    <h3>Account</h3>
+    <mat-divider></mat-divider>
+  </div>
+
+  <div *ngIf="isLoading">
+    <app-middle-loader></app-middle-loader>
+  </div>
+
+  <div [@fadeIn] *ngIf="!isLoading">
+    <div class="users__info">
+      <div class="left__title">
+        <h3>Public Avatar</h3>
+        <p>Here you can change your avatar</p>
+      </div>
+      <div class="right__elements">
+        <div class="users__avatar"></div>
+        <div class="right__container">
+          <h5>Upload your new avatar</h5>
+          <button mat-stroked-button>Choose file...</button>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="main__settings">
+      <div style="padding: 0; flex: 0 0 20%" class="settings_container">
+        <h3>Personal Information</h3>
+      </div>
+
+      <div class="user__forms" [formGroup]="personalInfoForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter your username" formControlName="username"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline" hideRequiredMarker>
+          <mat-label>Full name</mat-label>
+          <input matInput placeholder="Enter full name" formControlName="fullName"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your email" formControlName="email"/>
+        </mat-form-field>
+        <div style="display: flex; justify-content: center; width: 100%;  padding-bottom: 1rem;">
+          <button color="primary" *ngIf="!editMode" style="width: 75%" mat-stroked-button (click)="onEditAccountInfo()">
+            Edit account info
+          </button>
+
+          <div *ngIf="editMode" style="display: flex; justify-content: center; width: 100%">
+            <button
+              color="accent"
+              style="width: 37.5%"
+              *ngIf="editMode"
+              mat-stroked-button
+              (click)="toggleAndDisablePersonalForm()">
+              Cancel
+            </button>
+            <button
+              style="width: 37.5%"
+              class="save-button"
+              mat-stroked-button
+              [disabled]="isSaveButtonDisabled || !personalInfoForm.valid"
+              (click)="onSavePersonalInfo()">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="main__settings">
+      <div class="password-title">
+        <h3>Password</h3>
+      </div>
+
+      <div class="user__forms">
+        <div class="change-password-button">
+          <button mat-stroked-button (click)="navigateAccountReset()">Change password</button>
+        </div>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="main__settings">
+      <div style="padding: 0; flex: 0 0 20%" class="settings_container">
+        <h3>Other</h3>
+      </div>
+
+      <div class="user__forms">
+        <div style="width: 75%">
+          <button color="accent" style="width: 100%" mat-stroked-button>Delete my account</button>
+          <div style="margin-top: 1rem;">
+        <span>
+          Deleting your account is permanent.
+          All your data will be wiped out immediately and you won't be able to get it back.
+          Requires password.
+        </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div *ngIf="isLoading" class="loading-bar">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<div class="main__container login-wrapper">
+  <div class="left__container"></div>
+  <div class="right__container">
+    <div class="form">
+      <h1>
+        <mat-icon>account_circle</mat-icon>
+        Sign In
+      </h1>
+      <div class="form__container" [formGroup]="loginForm" (keyup)="enterHandler($event)">
+        <div class="error-message" *ngIf="isError.isShown">{{ isError.message }}</div>
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input autocomplete="off" matInput formControlName="username"/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password"/>
+        </mat-form-field>
+      </div>
+
+      <div class="help__line">
+        <div class="password__options">
+          <mat-checkbox>Remember me</mat-checkbox>
+        </div>
+        <div class="password__options">
+          <li id="fgp"><a href="">Forgot Password?</a></li>
+        </div>
+      </div>
+
+      <div class="signin__button">
+        <button mat-raised-button color="primary" [disabled]="!loginForm.valid" (click)="onSubmit()">Sign In</button>
+      </div>
+
+      <p>
+        Don't have an account?<a routerLink="/register"><span>Create</span></a>
+      </p>
+    </div>
+  </div>
+</div>

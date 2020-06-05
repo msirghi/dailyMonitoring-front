@@ -1,0 +1,78 @@
+<app-middle-loader *ngIf="isLoading"></app-middle-loader>
+
+<div style="padding: 20px" [@fadeIn]>
+
+  <div>
+    <app-task-form></app-task-form>
+  </div>
+
+  <div *ngIf="!isLoading" [@fadeIn]>
+
+    <app-no-statistics *ngIf="!isLoading && activityData.taskStatistics.totalProjects === 0"></app-no-statistics>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="statistics__button--show"
+      (click)="onShowStatisticsBtnClick()"
+    >
+      {{areStatisticsShown ? 'Show' : 'Hide'}} statistics
+    </button>
+
+    <div *ngIf="!isLoading && activityData.taskStatistics.totalProjects !== 0">
+      <div [@toggleHeight]=currentState>
+        <h3 class="statistics__title">Statistics &nbsp;
+          <mat-icon>timeline</mat-icon>
+        </h3>
+        <div class="stats-cards">
+          <mat-card class="widget-card">
+            <app-widget-card
+              label="Your projects"
+              [total]="activityData.taskStatistics.totalProjects"
+              percentage="50"
+              [data]="cards"></app-widget-card>
+          </mat-card>
+          <mat-card class="widget-card">
+            <app-widget-card
+              label="All tasks"
+              [total]="activityData.taskStatistics.totalTasks"
+              percentage="40"
+              [data]="cards"></app-widget-card>
+          </mat-card>
+          <mat-card class="widget-card" sers retention>
+            <app-widget-card
+              label="Done tasks"
+              [total]="activityData.taskStatistics.totalDoneTasks"
+              percentage="30"
+              [data]="cards"></app-widget-card>
+          </mat-card>
+          <mat-card class="widget-card">
+            <app-widget-card
+              label="Undone tasks"
+              [total]="activityData.taskStatistics.totalUndoneTasks"
+              percentage="20"
+              [data]="cards"></app-widget-card>
+          </mat-card>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <app-latest-project-activity
+        *ngIf="activityData.projectTaskActivity.length > 0"
+        [lastTasks]="activityData.projectTaskActivity.reverse()"
+        [chartValues]="activityData.chartValues"
+        [months]="activityData.chartMonths"
+      ></app-latest-project-activity>
+
+      <app-no-latest-project-activity
+        *ngIf="activityData.projectTaskActivity.length === 0"
+      ></app-no-latest-project-activity>
+
+      <mat-divider></mat-divider>
+    </div>
+
+    <app-last-personal-activity></app-last-personal-activity>
+
+  </div>
+</div>

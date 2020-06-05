@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>
+  <mat-icon color="primary">info</mat-icon>
+  <span>Task details</span></h1>
+<mat-dialog-content>
+  <div class="content-wrapper">
+    <form [formGroup]="taskForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Task name" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <label>
+          <textarea
+            rows="3"
+            matInput
+            placeholder="Task description"
+            formControlName="description"></textarea>
+        </label>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Priority</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of priorities" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+<!--  <div class="full-width-button">-->
+<!--    <button-->
+<!--      class="mark-as-complete-button"-->
+<!--      mat-raised-button [mat-dialog-close]="'complete'">Mark as completed</button>-->
+<!--  </div>-->
+  <div class="inline-buttons">
+    <button class="inline-button" mat-raised-button color="accent" [mat-dialog-close]="false">Close</button>
+    <button
+      class="inline-button"
+      mat-raised-button
+      color="primary"
+      [disabled]="!taskForm.valid"
+      [mat-dialog-close]="{id: passedData.id, name: taskForm.value.name, description: taskForm.value.description}">Save
+    </button>
+  </div>
+</mat-dialog-actions>

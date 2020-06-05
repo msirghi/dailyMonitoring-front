@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
+$spanColor: rgb(233, 30, 99, 1);
+
+.main__container {
+  width: 100%;
+  height: 100%;
+  @include flexSpaceBetween();
+}
+
+.left__container {
+  width: 45%;
+  height: 100%;
+  @include flexCenter();
+  align-items: center;
+}
+
+.right__container {
+  background-image: url(https://source.unsplash.com/random);
+  background-repeat: space;
+  height: 100%;
+  width: 55%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .right__container {
+    width: 0;
+  }
+
+  .left__container {
+    @include flexCenter();
+    width: 100% !important;
+  }
+}
+
+.confirmation .email-known {
+  width: 100%;
+  margin-bottom: 2%;
+
+  &__button {
+    width: 100%;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //background-color: #f9a71c;
+  }
+}
+
+app-register-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,46 @@
+<h3 class="logo">
+  <a (click)="onClose()" routerLink="/dashboard">
+    <img class="main-logo" alt="logo" height="100" src="assets/logo_transparent_2.png"/>
+  </a>
+</h3>
+
+<mat-divider></mat-divider>
+
+<mat-nav-list>
+  <a mat-list-item routerLink="/account" (click)="onClose()">
+    <mat-icon color="primary">account_circle</mat-icon>
+    <span class="nav-caption">Account</span>
+  </a>
+  <a mat-list-item routerLink="/dashboard" (click)="onClose()">
+    <mat-icon color="primary">dashboard</mat-icon>
+    <span class="nav-caption">Dashboard</span>
+  </a>
+  <a mat-list-item routerLink="/todo" (click)="onClose()">
+    <mat-icon color="primary">format_list_bulleted</mat-icon>
+    <span class="nav-caption">Your tasks</span>
+  </a>
+  <a mat-list-item (click)="changeState()">
+    <mat-icon *ngIf="projectsAnimationState === 'initial'" color="primary">keyboard_arrow_right</mat-icon>
+    <mat-icon *ngIf="projectsAnimationState !== 'initial'" color="primary">keyboard_arrow_down</mat-icon>
+    <span class="nav-caption">Projects</span>
+  </a>
+
+  <mat-divider></mat-divider>
+
+  <div [@changeDivSize]=projectsAnimationState>
+    <mat-list-item *ngFor="let project of projects;" (click)="onClose()">
+      <a mat-list-item [routerLinkActive]="['is-active']" [routerLink]="['/project', project.id]">
+        <mat-icon class="sidebar-icon" [ngStyle]="{'color': project.color || 'black'}" color="primary">
+          fiber_manual_record
+        </mat-icon>
+        {{ project.name }}
+      </a>
+    </mat-list-item>
+    <mat-list-item>
+      <a mat-list-item routerLinkActive="list-item-active" (click)="onAddProject()">
+        <mat-icon color="primary">add</mat-icon>
+        <span>Add project</span>
+      </a>
+    </mat-list-item>
+  </div>
+</mat-nav-list>

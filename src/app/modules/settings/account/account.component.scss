@@ -1,0 +1,156 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flexEnd {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin flexStart {
+  display: flex;
+  justify-content: flex-start;
+}
+
+$bgColor: rgb(3, 83, 125);
+
+h1 {
+  @include flexStart();
+}
+
+mat-form-field ::ng-deep.mat-form-field-underline {
+  height: 0 !important;
+}
+
+hr {
+  width: 90%;
+  padding: 0;
+  margin: 12px;
+  border: 0;
+  border-top: 1px solid #e1e1e1;
+}
+
+.users__info {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+  .users__avatar {
+    height: 160px;
+    width: 160px;
+    background-color: $bgColor;
+    border-radius: 50%;
+  }
+}
+
+.right__elements {
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+
+  h5 {
+    padding: 0;
+  }
+}
+
+.right__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.left__title {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 0;
+}
+
+@media (max-width: 500px) {
+  .right__elements, .users__avatar {
+    margin: 0 auto;
+    text-align: center;
+
+    & button {
+      width: 75%;
+      margin: 0 auto;
+    }
+  }
+
+  .main__settings, .users__info, .right__elements {
+    display: initial !important;
+    width: 100% !important;
+
+    & .user__forms {
+      width: 100% !important;
+    }
+
+    mat-form-field {
+      width: 100% !important;
+    }
+  }
+}
+
+.main__settings {
+  display: flex;
+
+  mat-form-field {
+    width: 75%;
+  }
+
+  .user__forms {
+    margin-top: 1rem;
+    width: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.4em 0px !important;
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+  top: -1.5em;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.1em) scale(.75);
+  width: 133.33333%;
+}
+
+.save-button {
+  color: green;
+}
+
+.new-password {
+  margin-top: -1rem;
+}
+
+.current-password {
+  margin-top: 1rem;
+}
+
+.password-submit-btn, .change-password-button {
+  width: 75%;
+
+  & button {
+    width: 100%;
+  }
+}
+
+.password-submit-btn {
+  padding-bottom: 1rem;
+}
+
+.password-title {
+  padding: 0;
+  flex: 0 0 20%;
+}

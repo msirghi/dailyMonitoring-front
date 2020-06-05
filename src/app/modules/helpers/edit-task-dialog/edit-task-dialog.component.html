@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <h1 mat-dialog-title>
+    <mat-icon color="primary">edit</mat-icon>
+    <span>Edit</span></h1>
+  <div mat-dialog-content [formGroup]="taskForm">
+    <mat-form-field>
+      <mat-label>Task name</mat-label>
+      <input #name="matInput" matInput formControlName="name">
+    </mat-form-field>
+
+    <div style="display: flex; align-items: baseline">
+      <mat-form-field>
+        <mat-label>Assigned to</mat-label>
+        <mat-select [(value)]="selectedUser">
+          <mat-select-trigger>
+            <span>  {{selectedUser ? selectedUser.fullName : ''}} </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let user of users" (click)="onUserSelect(user)" [value]="user">
+            <mat-icon>perm_identity</mat-icon>
+            {{user.fullName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-stroked-button (click)="onNoClick()">Cancel</button>
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="onSubmit()"
+      cdkFocusInitial
+      [disabled]="!taskForm.valid"
+    >
+      Ok
+    </button>
+  </div>
+</div>

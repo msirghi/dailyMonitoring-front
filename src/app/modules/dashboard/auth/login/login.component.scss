@@ -1,0 +1,246 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.loading-bar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  color: red;
+  padding-bottom: 3%;
+}
+
+@mixin blueBgColor {
+  background: rgb(1, 40, 178);
+  background: linear-gradient(
+    90deg,
+    rgba(1, 40, 178, 1) 0%,
+    rgba(63, 81, 181, 1) 100%
+  );
+}
+
+@mixin pinkBgColor {
+  background: rgb(145, 14, 65);
+  background: linear-gradient(
+    90deg,
+    rgba(145, 14, 65, 1) 0%,
+    rgba(233, 30, 99, 1) 100%
+  );
+}
+
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin marginLeft {
+  margin-left: 20%;
+}
+
+$bgColor: #f8f8f8;
+$fontColor: black;
+$spanColor: rgb(233, 30, 99, 1);
+
+.main__container {
+  width: 100%;
+  height: 100%;
+  background-color: $bgColor;
+
+  @include flexSpaceBetween();
+}
+
+.right__container {
+  height: 100%;
+  width: 45%;
+  background-color: $bgColor;
+
+  h1 {
+    @include flexCenter();
+    height: 5%;
+    margin-top: 25%;
+    font-size: 3rem;
+    & mat-icon {
+      font-size: 2.5rem;
+    }
+  }
+
+  .form__container {
+    margin-top: 3%;
+    @include marginLeft();
+    @include flexCenter();
+    flex-direction: column;
+    width: 62%;
+
+    .mat-form-field {
+      background-color: $bgColor;
+    }
+  }
+
+  .help__line {
+    display: flex;
+    margin-left: 20%;
+  }
+
+  .password__options {
+    flex: 1;
+    li {
+      list-style-type: none;
+      margin-top: 2px;
+      padding-left: 7%;
+
+      a {
+        text-decoration: none;
+        color: $fontColor;
+      }
+    }
+  }
+
+  ::ng-deep
+    .mat-checkbox-checked.mat-accent
+    .mat-checkbox-ripple
+    .mat-ripple-element {
+    opacity: 0.01 !important;
+    background-color: #005691 !important;
+  }
+
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+  .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color:rgba(1, 40, 178, 1);
+  }
+
+  #fgp {
+    padding-top: 2px;
+    padding-left: 42px;
+  }
+
+  .signin__button {
+    @include flexCenter();
+    margin-top: 5%;
+    width: 100%;
+
+    button {
+      width: 62%;
+      margin-left: 2%;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    a {
+      text-decoration: none;
+    }
+
+    span {
+      color: $spanColor;
+      font-size: 16px;
+      &::before {
+        content: "  ";
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .right__container {
+    display: block;
+    width: 100% !important;
+  }
+
+  .left__container {
+    width: 0;
+  }
+
+  .form {
+    top: 0 !important;
+    position: unset;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .left__container {
+    background-image: url(https://source.unsplash.com/random);
+    background-repeat: space;
+    height: 100%;
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .password__options {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #fgp {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+    padding: 0.05em 0 !important;
+  }
+
+  ::ng-deep .mat-form-field-label-wrapper {
+    top: -1.1em;
+  }
+
+  ::ng-deep
+    .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+    .mat-form-field-label {
+    transform: translateY(-1.1em) scale(0.75);
+    width: 133.33333%;
+  }
+  .mat-form-field.mat-form-field {
+    font-size: 13.5px;
+  }
+
+  .help__line {
+    display: flex;
+
+    .password__options {
+      padding-top: 7px;
+
+      li {
+        padding-left: 0;
+        padding-right: 28%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) and (max-width: 768px) {
+  .right__container {
+    width: 60%;
+  }
+
+  .form {
+    top: 20%;
+    position: relative;
+  }
+}
+
+.form h1 {
+  display: flex;
+  align-items: center;
+
+  & mat-icon {
+    margin-right: 1.4%;
+  }
+}

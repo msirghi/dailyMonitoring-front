@@ -1,0 +1,112 @@
+<div class="fade-in" style="padding: 20px">
+  <h3 class="title__your-tasks">
+    Your tasks
+  </h3>
+  <mat-divider></mat-divider>
+
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar">
+      <h4>Today's goal: <span>4</span> out of 5 tasks done</h4>
+      <mat-progress-bar mode="determinate" value="80"></mat-progress-bar>
+    </div>
+
+    <div class="progress-bar">
+      <h4>Weekly goal: <span>20</span> out of 35 tasks done</h4>
+      <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h4 class="title__current-tasks">
+      <mat-icon color="accent">scatter_plot</mat-icon>
+      <span *ngIf="currentTasks.length !== 0"> You have {{ currentTasks.length }} task(s) </span>
+      <span *ngIf="currentTasks.length === 0"> Your current tasks </span>
+    </h4>
+    <mat-divider></mat-divider>
+
+    <div *ngIf="currentTasks.length === 0" [@fadeInOut] class="current-tasks__no-tasks">
+      <div class="no-tasks-images mt-3">
+        <img
+          height="80"
+          src="https://www.vhv.rs/file/max/2/26550_appointment-icon-png.png"
+          alt="">
+      </div>
+      <span> There are no tasks in your list. Add one! </span>
+    </div>
+
+    <div class="current-tasks" [@fadeInOut]>
+      <mat-selection-list
+        [(ngModel)]="selectedOptions"
+        (ngModelChange)="markAsCompletedHandler($event)"
+        *ngIf="currentTasks.length !== 0">
+        <mat-list-option
+          *ngFor="let task of currentTasks"
+          [value]="task"
+          [@fadeInOut]>
+          <div class="current-tasks__item">
+            <div matTooltip="Click to mark as completed" class="current-tasks__item">
+              <mat-checkbox class="custom-frame"></mat-checkbox>
+              {{task.name}}
+            </div>
+            <mat-divider></mat-divider>
+            <div
+              class="current-tasks__item__options"
+              matTooltip="Task details"
+              matTooltipPosition='above'
+            >
+              <button mat-button class="details-button" (click)="openDetailsDialog($event, task)">
+                <mat-icon color="primary">info</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-list-option>
+      </mat-selection-list>
+      <div class="new-task" *ngIf="animationState === 'initial'">
+        <div class="container fade-in ">
+          <button
+            class="new-task__add-button fade-in"
+            mat-button
+            (click)="onExpandTaskCreationHandler()">
+            <mat-icon>add</mat-icon>
+            Add new task
+          </button>
+        </div>
+      </div>
+      <app-todo-creation-form
+        *ngIf="animationState === 'final'"
+        (addTaskHandler)="onAddTaskHandler($event)"
+        (expandTaskCreationHandler)="onExpandTaskCreationHandler()"
+        [currentState]="animationState"
+      ></app-todo-creation-form>
+    </div>
+  </div>
+
+  <div>
+    <h4 class="title__past-tasks mt-3">
+      <mat-icon color="accent">gesture</mat-icon>
+      Your five last completed tasks
+    </h4>
+    <mat-divider></mat-divider>
+    <div class="past-tasks">
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let task of tasksDone;" class="fade-in" [@fadeIn]>
+          <div class="past-tasks__item">
+            <mat-icon class="past-tasks__item--right-icon">done</mat-icon>
+            <span [matTooltip]="task.description || 'No description'"
+                  matTooltipPosition='above'>{{task.name}}</span>
+            <div
+              class="past-tasks__item--options"
+              [matTooltip]="task.taskDoneTime"
+              matTooltipPosition='above'>
+              <mat-icon>access_time</mat-icon>
+              {{ task.taskDoneTime | date:
+              task.taskDoneTime.toDateString() == todaysDate.toDateString()
+                ? '\'Today\', h:mm a' : 'MMM d, y, h:mm a' }}
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>
