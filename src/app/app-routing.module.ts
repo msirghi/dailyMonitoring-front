@@ -8,10 +8,10 @@ import { ProjectsMainComponent } from './modules/projects/projects-main/projects
 import { ProjectComponent } from './modules/projects/project/project.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AnonymousGuard } from './guards/anonymous.guard';
-import { LoginComponent } from './modules/dashboard/auth/login/login.component';
-import { RegisterComponent } from './modules/dashboard/auth/register/register.component';
-import { ForgotPasswordComponent } from './modules/dashboard/auth/forgot-password/forgot-password.component';
-import { NewPasswordComponent } from './modules/dashboard/auth/new-password/new-password.component';
+import { LoginComponent } from './modules/auth/login/login.component';
+import { RegisterComponent } from './modules/auth/register/register/register.component';
+import { ForgotPasswordComponent } from './modules/auth/forgot-password/forgot-password.component';
+import { NewPasswordComponent } from './modules/auth/new-password/new-password.component';
 import { AccountComponent } from './modules/settings/account/account.component';
 import { ResetPasswordComponent } from './modules/settings/account/reset-password/reset-password.component';
 

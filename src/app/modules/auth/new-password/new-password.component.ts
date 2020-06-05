@@ -1,26 +1,27 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: "app-new-password",
-  templateUrl: "./new-password.component.html",
-  styleUrls: ["./new-password.component.scss"],
+  selector: 'app-new-password',
+  templateUrl: './new-password.component.html',
+  styleUrls: ['./new-password.component.scss'],
 })
 export class NewPasswordComponent implements OnInit {
   newPasswordForm: FormGroup;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
     this.newPasswordForm = new FormGroup(
       {
-        newPassword: new FormControl("", [
+        newPassword: new FormControl('', [
           Validators.required,
-          Validators.pattern("(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"),
+          Validators.pattern('(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$'),
         ]),
-        repeatNewPassword: new FormControl("", [
+        repeatNewPassword: new FormControl('', [
           Validators.required,
-          Validators.pattern("(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"),
+          Validators.pattern('(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$'),
         ]),
       },
       this.pwdMatchValidator
@@ -30,7 +31,7 @@ export class NewPasswordComponent implements OnInit {
   pwdMatchValidator(frm: FormGroup) {
     return frm.get('newPassword').value === frm.get('repeatNewPassword').value
       ? null
-      : {mismatch: true};
+      : { mismatch: true };
   }
 
   submitHandler() {

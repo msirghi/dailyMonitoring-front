@@ -36,10 +36,10 @@ import { LastPersonalActivityComponent } from '../../modules/dashboard/last-pers
 import { NoLatestProjectActivityComponent } from '../../modules/dashboard/no-latest-project-activity/no-latest-project-activity.component';
 import { TopLoaderComponent } from '../top-loader/top-loader.component';
 import { MiddleLoaderComponent } from '../middle-loader/middle-loader.component';
-import { LoginComponent } from '../../modules/dashboard/auth/login/login.component';
-import { ForgotPasswordComponent } from '../../modules/dashboard/auth/forgot-password/forgot-password.component';
-import { NewPasswordComponent } from '../../modules/dashboard/auth/new-password/new-password.component';
-import { RegisterComponent } from '../../modules/dashboard/auth/register/register.component';
+import { LoginComponent } from '../../modules/auth/login/login.component';
+import { ForgotPasswordComponent } from '../../modules/auth/forgot-password/forgot-password.component';
+import { NewPasswordComponent } from '../../modules/auth/new-password/new-password.component';
+import { RegisterComponent } from '../../modules/auth/register/register/register.component';
 import { AccountComponent } from '../../modules/settings/account/account.component';
 import { ThemeChangeSettingsComponent } from '../../modules/settings/theme-change-settings/theme-change-settings.component';
 import { MaterialModule } from '../../material.module';
