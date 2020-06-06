@@ -19,28 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f8b05a1-0e1b-4680-b720-587e58e6d0a4" name="Default Changelist" comment="[Add]: project alerts">
+    <list default="true" id="3f8b05a1-0e1b-4680-b720-587e58e6d0a4" name="Default Changelist" comment="[Fix]: merge issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layouts/default/default.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/default/default.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/UserModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/UserModel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/forgot-password/forgot-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/forgot-password/forgot-password.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/forgot-password/forgot-password.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/forgot-password/forgot-password.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/forgot-password/forgot-password.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/forgot-password/forgot-password.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/forgot-password/forgot-password.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/forgot-password/forgot-password.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/login/login.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/login/login.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/login/login.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/login/login.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/new-password/new-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/new-password/new-password.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/new-password/new-password.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/new-password/new-password.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/new-password/new-password.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/new-password/new-password.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/new-password/new-password.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/new-password/new-password.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/register/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/register/register.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/register/register/register.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/register/register.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/register/register/register.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/auth/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/register/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project-alert-creation/project-alert-creation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert-creation/project-alert-creation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project-alert-creation/project-alert-creation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert-creation/project-alert-creation.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/projectAlerts.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/projectAlerts.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +203,8 @@
       <workItem from="1591338842804" duration="5538000" />
       <workItem from="1591351324898" duration="23000" />
       <workItem from="1591385641431" duration="2973000" />
-      <workItem from="1591392031508" duration="907000" />
+      <workItem from="1591392031508" duration="1148000" />
+      <workItem from="1591459063770" duration="1877000" />
     </task>
     <task id="LOCAL-00001" summary="[Add]: add/delete project components">
       <created>1589808813675</created>
@@ -292,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591015543385</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="[Fix]: merge issues">
+      <created>1591393174254</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591393174254</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +312,8 @@
     <MESSAGE value="[Add]: code refactor" />
     <MESSAGE value="[Add]: edit task feature" />
     <MESSAGE value="[Add]: project alerts" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Add]: project alerts" />
+    <MESSAGE value="[Fix]: merge issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Fix]: merge issues" />
   </component>
   <component name="WindowStateProjectService">
     <state x="482" y="130" width="1063" height="713" key="#Vim_Emulation" timestamp="1591340692873">
@@ -346,25 +338,25 @@
     </state>
     <state x="711" y="276" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591351345787" />
     <state x="711" y="276" key="FileChooserDialogImpl/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1589871630458" />
-    <state width="1691" height="268" key="GridCell.Tab.0.bottom" timestamp="1591392341104">
+    <state width="1691" height="268" key="GridCell.Tab.0.bottom" timestamp="1591393186101">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591392341104" />
+    <state width="1691" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591393186101" />
     <state width="1757" height="269" key="GridCell.Tab.0.bottom/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.0.center" timestamp="1591392341104">
+    <state width="1691" height="268" key="GridCell.Tab.0.center" timestamp="1591393186101">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591392341104" />
+    <state width="1691" height="268" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591393186101" />
     <state width="1757" height="269" key="GridCell.Tab.0.center/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.0.left" timestamp="1591392341104">
+    <state width="1691" height="268" key="GridCell.Tab.0.left" timestamp="1591393186101">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591392341104" />
+    <state width="1691" height="268" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591393186101" />
     <state width="1757" height="269" key="GridCell.Tab.0.left/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.0.right" timestamp="1591392341104">
+    <state width="1691" height="268" key="GridCell.Tab.0.right" timestamp="1591393186101">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591392341104" />
+    <state width="1691" height="268" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591393186101" />
     <state width="1757" height="269" key="GridCell.Tab.0.right/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
     <state width="1757" height="269" key="GridCell.Tab.1.bottom" timestamp="1590525632070">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -419,6 +411,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="498" height="446" key="SwitcherDM/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590583467507" />
+    <state x="535" y="256" key="Vcs.Push.Dialog.v2" timestamp="1591393177745">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="535" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591393177745" />
     <state x="743" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590241195795">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -441,10 +437,10 @@
     </state>
     <state x="590" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591202319607" />
     <state x="590" y="243" key="run.anything.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590586361510" />
-    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1591392823965">
+    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1591461364635">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591392823965" />
+    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591461364635" />
     <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590827292313" />
   </component>
 </project>
