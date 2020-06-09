@@ -23,5 +23,4 @@ export class AuraMenuComponent implements OnInit {
       this.isLoading = false;
     });
   }
-
 }

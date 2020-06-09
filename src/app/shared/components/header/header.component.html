@@ -21,7 +21,7 @@
         </li>
         <li matTooltip="Aura">
           <button #menuTrigger="matMenuTrigger" mat-icon-button [matMenuTriggerFor]="auraMenu" (click)="openAuraMenu()">
-            <mat-icon>self_improvement</mat-icon>
+            <img height="25" src="assets/icons/self_improvement.svg" alt="">
           </button>
           <mat-menu class="settings-menu" #auraMenu="matMenu">
             <app-aura-menu *ngIf="matMenuTrigger.menuOpen"></app-aura-menu>

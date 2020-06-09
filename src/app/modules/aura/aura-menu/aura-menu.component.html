@@ -8,7 +8,7 @@
   </div>
 
   <div class="completed-tasks">
-    <span>99 completed tasks</span>
+    <span>{{auraData.totalCompletedTasks}} completed tasks</span>
   </div>
 
   <mat-divider></mat-divider>
@@ -38,8 +38,8 @@
     </mat-tab>
     <mat-tab label="Goal">
       <div class="task-wrapper">
-        <mat-icon color="primary" class="task-icon">psychology</mat-icon>
-        <span> Daily goal:  <b>4/5 tasks</b></span>
+        <object id="svg1" data="/assets/icons/psychology.svg" type="image/svg+xml"></object>
+        <span> Daily goal:  <b>{{auraData.tasksDone}}/{{auraData.dailyGoal}} tasks</b></span>
 
         <div class="help pb-1">
           <mat-divider></mat-divider>
