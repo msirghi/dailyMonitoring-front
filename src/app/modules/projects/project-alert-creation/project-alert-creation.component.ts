@@ -48,7 +48,6 @@ export class ProjectAlertCreationComponent implements OnInit {
   onSubmit() {
     const { message, areMembersNotified } = this.alertForm.value;
     const date = new Date(this.alertForm.value.date);
-    console.log(this.alertForm.value);
 
     this.projectAlertsService.addAlert(this.data.projectId, {
       message,

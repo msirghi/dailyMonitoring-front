@@ -47,8 +47,8 @@ import { EditTaskDialogComponent } from '../../modules/helpers/edit-task-dialog/
 import { ResetPasswordComponent } from '../../modules/settings/account/reset-password/reset-password.component';
 import { ProjectAlertComponent } from '../../modules/projects/project-alert/project-alert.component';
 import { ProjectAlertCreationComponent } from '../../modules/projects/project-alert-creation/project-alert-creation.component';
-import { AppComponent } from '../../app.component';
 import { ConfirmationDialogComponent } from '../../modules/helpers/confirmation-dialog/confirmation-dialog.component';
+import { QuickTodoDialogComponent } from '../../modules/todos/quick-todo-dialog/quick-todo-dialog.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +89,8 @@ import { ConfirmationDialogComponent } from '../../modules/helpers/confirmation-
     ResetPasswordComponent,
     ProjectAlertComponent,
     ProjectAlertCreationComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    QuickTodoDialogComponent
   ],
   imports: [
     CommonModule,
@@ -123,7 +124,8 @@ import { ConfirmationDialogComponent } from '../../modules/helpers/confirmation-
     AddProjectDialogComponent,
     EditTaskDialogComponent,
     ProjectAlertCreationComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    QuickTodoDialogComponent
   ]
 })
 export class DefaultModule {
