@@ -19,25 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f8b05a1-0e1b-4680-b720-587e58e6d0a4" name="Default Changelist" comment="[Add]: quick todo dialog">
-      <change afterPath="$PROJECT_DIR$/src/app/models/aura.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/aura.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.ts" afterDir="false" />
+    <list default="true" id="3f8b05a1-0e1b-4680-b720-587e58e6d0a4" name="Default Changelist" comment="[Add]: aura module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layouts/default/default.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/default/default.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/material.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/material.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/latest-project-activity/latest-project-activity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/dashboard/latest-project-activity/latest-project-activity.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/dashboard/latest-project-activity/latest-project-activity.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/dashboard/latest-project-activity/latest-project-activity.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/todos/quick-todo-dialog/quick-todo-dialog.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/todos/quick-todo-dialog/quick-todo-dialog.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/todos/todos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/todos/todos.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/welcome/welcome.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/welcome/welcome.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/welcome/welcome.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/welcome/welcome.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/aura/aura-menu/aura-menu.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shared/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/header/header.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -223,7 +211,7 @@
       <workItem from="1591525647996" duration="2380000" />
       <workItem from="1591547233080" duration="14000" />
       <workItem from="1591684917353" duration="1405000" />
-      <workItem from="1591686338534" duration="7880000" />
+      <workItem from="1591686338534" duration="11642000" />
     </task>
     <task id="LOCAL-00001" summary="[Add]: add/delete project components">
       <created>1589808813675</created>
@@ -316,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591688368576</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[Add]: aura module">
+      <created>1591697160224</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1591697160224</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +343,8 @@
     <MESSAGE value="[Fix]: merge issues" />
     <MESSAGE value="[Add]: checkbox for email notification (project alert module)" />
     <MESSAGE value="[Add]: quick todo dialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Add]: quick todo dialog" />
+    <MESSAGE value="[Add]: aura module" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Add]: aura module" />
   </component>
   <component name="WindowStateProjectService">
     <state x="482" y="130" width="1063" height="713" key="#Vim_Emulation" timestamp="1591340692873">
@@ -472,10 +468,10 @@
     </state>
     <state x="590" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591202319607" />
     <state x="590" y="243" key="run.anything.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590586361510" />
-    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1591695646464">
+    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1591699580289">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591695646464" />
+    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591699580289" />
     <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590827292313" />
   </component>
 </project>

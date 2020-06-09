@@ -20,13 +20,11 @@
           </button>
         </li>
         <li matTooltip="Aura">
-          <!--          <button class="aura-btn" mat-icon-button>-->
-          <button mat-icon-button [matMenuTriggerFor]="auraMenu">
-            <mat-icon>sentiment_satisfied</mat-icon>
-            <!--            <span>1/5</span>-->
+          <button #menuTrigger="matMenuTrigger" mat-icon-button [matMenuTriggerFor]="auraMenu" (click)="openAuraMenu()">
+            <mat-icon>self_improvement</mat-icon>
           </button>
           <mat-menu class="settings-menu" #auraMenu="matMenu">
-            <app-aura-menu></app-aura-menu>
+            <app-aura-menu *ngIf="matMenuTrigger.menuOpen"></app-aura-menu>
           </mat-menu>
         </li>
         <li>

@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { AuthService } from '../../../modules/auth/auth.service';
 import { Router } from '@angular/router';
-import { MatDialog, MatSlideToggleChange } from '@angular/material';
+import { MatDialog, MatMenuTrigger, MatSlideToggleChange } from '@angular/material';
 import { ColorSchemeService } from '../../../modules/settings/color-scheme.service';
 import { QuickTodoDialogComponent } from '../../../modules/todos/quick-todo-dialog/quick-todo-dialog.component';
 
@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   @Output() sidenavToggle = new EventEmitter<void>();
   @Input('isButtonDisplayed') isButtonDisplayed: boolean;
   @ViewChild('toggleElement', { static: true }) ref: ElementRef;
+  @ViewChild('menuTrigger', { static: true }) matMenuTrigger: MatMenuTrigger;
 
   checked = false;
 
@@ -69,5 +70,9 @@ export class HeaderComponent implements OnInit {
     this.dialog.open(QuickTodoDialogComponent, {
       width: '300px'
     });
+  }
+
+  openAuraMenu() {
+    this.matMenuTrigger.openMenu();
   }
 }

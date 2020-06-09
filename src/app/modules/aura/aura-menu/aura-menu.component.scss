@@ -10,6 +10,13 @@
   padding: 1rem;
 }
 
+.spinner-wrapper {
+  width: 20rem;
+  padding: 1rem;
+  @include align-center;
+  height: 20rem;
+}
+
 .title {
   margin-top: -2rem;
 }
@@ -21,25 +28,60 @@
 
 .total-points {
   @include align-center;
-  font-size: 5rem;
+  //font-size: 5rem;
+  margin-top: 1rem;
+
+  & mat-icon {
+    font-size: 6rem;
+    width: 6rem;
+    height: 6rem;
+  }
 }
 
 .points-title {
-  @include align-center;
   padding-bottom: 1rem;
+  text-align: center;
 }
 
 .help {
   @include align-center;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
 
-  & span {
-    font-size: 1rem;
+.pb-1 {
+  padding-bottom: 1rem;
+}
+
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active {
+  min-width: 40% !important;
+  padding: 3px !important;
+  margin: 3px !important;
+}
+
+.aura-status {
+  font-weight: 600;
+}
+
+.points {
+  text-align: center;
+  padding-bottom: 1rem;
+
+  &-count {
+    font-size: 1.4rem;
   }
 }
 
-::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
-  //min-width: 20px !important;
-  min-width: 40% !important;
-  padding: 3px!important;
-  margin: 3px!important;
+.task-icon {
+  margin-top: 1rem;
+  font-size: 6rem;
+  width: 6rem;
+  height: 6rem;
+}
+
+.task-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

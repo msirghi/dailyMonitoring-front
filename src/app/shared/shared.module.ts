@@ -5,7 +5,7 @@ import {
   MatDividerModule,
   MatIconModule,
   MatListModule,
-  MatMenuModule,
+  MatMenuModule, MatProgressSpinnerModule,
   MatSlideToggleModule, MatTabsModule,
   MatToolbarModule,
   MatTooltipModule
@@ -50,7 +50,8 @@ import { AuraMenuComponent } from '../modules/aura/aura-menu/aura-menu.component
     MatTooltipModule,
     MatSlideToggleModule,
     DragDropModule,
-    MatTabsModule
+    MatTabsModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     HeaderComponent,
