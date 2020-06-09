@@ -49,6 +49,7 @@ import { ProjectAlertComponent } from '../../modules/projects/project-alert/proj
 import { ProjectAlertCreationComponent } from '../../modules/projects/project-alert-creation/project-alert-creation.component';
 import { ConfirmationDialogComponent } from '../../modules/helpers/confirmation-dialog/confirmation-dialog.component';
 import { QuickTodoDialogComponent } from '../../modules/todos/quick-todo-dialog/quick-todo-dialog.component';
+import { AuraMenuComponent } from 'src/app/modules/aura/aura-menu/aura-menu.component';
 
 @NgModule({
   declarations: [
@@ -116,6 +117,9 @@ import { QuickTodoDialogComponent } from '../../modules/todos/quick-todo-dialog/
           horizontalPosition: 'left'
         }
     }
+  ],
+  exports: [
+    AuraMenuComponent
   ],
   entryComponents: [
     PopupDialogComponent,

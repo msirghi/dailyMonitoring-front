@@ -1,0 +1,45 @@
+@mixin align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  font-size: 1.6rem;
+  width: 20rem;
+  padding: 1rem;
+}
+
+.title {
+  margin-top: -2rem;
+}
+
+.completed-tasks {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.total-points {
+  @include align-center;
+  font-size: 5rem;
+}
+
+.points-title {
+  @include align-center;
+  padding-bottom: 1rem;
+}
+
+.help {
+  @include align-center;
+
+  & span {
+    font-size: 1rem;
+  }
+}
+
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
+  //min-width: 20px !important;
+  min-width: 40% !important;
+  padding: 3px!important;
+  margin: 3px!important;
+}

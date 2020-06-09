@@ -3,7 +3,6 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
 import {Renderer2} from '@angular/core';
 import {QuotesService} from '../quotes.service';
 
-
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -32,9 +31,10 @@ export class WelcomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.quoteService
-      .getQuotes()
-      .subscribe((quotes: Array<{ text: string, author: string }>) => this.getRandomQuote(quotes));
+    // this.quoteService
+    //   .getQuotes()
+    //   .subscribe((quotes: Array<{ text: string, author: string }>) => this.getRandomQuote(quotes));
+    setTimeout(() => this.loading = false, 1000);
   }
 
   public onIntersectionAnimateLeft({target, visible}: { target: Element; visible: boolean }): void {

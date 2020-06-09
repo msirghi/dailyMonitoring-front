@@ -19,14 +19,18 @@
             <mat-icon matTooltip="Quick add new task">add</mat-icon>
           </button>
         </li>
-        <li matTooltip="Achievements">
-          <button class="aura-btn" mat-icon-button>
-            <mat-icon>poll</mat-icon>
-            <span>1/5</span>
+        <li matTooltip="Aura">
+          <!--          <button class="aura-btn" mat-icon-button>-->
+          <button mat-icon-button [matMenuTriggerFor]="auraMenu">
+            <mat-icon>sentiment_satisfied</mat-icon>
+            <!--            <span>1/5</span>-->
           </button>
+          <mat-menu class="settings-menu" #auraMenu="matMenu">
+            <app-aura-menu></app-aura-menu>
+          </mat-menu>
         </li>
         <li>
-          <button mat-button [matMenuTriggerFor]="menu">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>settings</mat-icon>
           </button>
           <mat-menu class="settings-menu" #menu="matMenu">

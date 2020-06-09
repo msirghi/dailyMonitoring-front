@@ -1,6 +1,6 @@
-<h3 style="justify-content: center; display: flex; align-items: center">
+<h3 class="title">
   <span>Overall Project Analysis</span>
-  <mat-icon style="margin-left: 1rem;">multiline_chart</mat-icon>
+  <mat-icon>multiline_chart</mat-icon>
 </h3>
 
 <div class="latest-activity-wrapper">
@@ -19,25 +19,23 @@
     </highcharts-chart>
   </div>
 
-  <div style="padding: 2rem;">
+  <div class="divider">
     <mat-divider vertical class="vertical-divider"></mat-divider>
   </div>
 
   <div class="project-activity">
     <h3>Project activity</h3>
     <mat-divider></mat-divider>
-    <div style="display: flex; align-items: center; margin-top: 1rem;" *ngFor="let task of lastTasks;">
-      <div style="font-size: 5rem; display: flex; align-items: center;">
+    <div class="last-task-wrapper" *ngFor="let task of lastTasks;">
+      <div class="last-task-item">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Microsoft_Account.svg/1200px-Microsoft_Account.svg.png"
           height="50" alt="">
       </div>
       <div class="task-wrapper">
-        <div style="display: flex;">
+        <div class="task-options">
           <b>{{task.userName}}</b>
-          <span style="font-family: 'Roboto',serif; font-size: 1.3rem; margin-left: auto;">
-            {{task.dateTime | date:'dd.MM.yy | h:mma'}}
-          </span>
+          <span>{{task.dateTime | date:'dd.MM.yy | h:mma'}}</span>
         </div>
         <div class="task-project-line">
           <span matTooltip="Navigate to project">

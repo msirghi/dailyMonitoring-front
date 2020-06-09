@@ -6,7 +6,7 @@ import {
   MatIconModule,
   MatListModule,
   MatMenuModule,
-  MatSlideToggleModule,
+  MatSlideToggleModule, MatTabsModule,
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
@@ -22,6 +22,8 @@ import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { SideNavListComponent } from './components/side-nav-list/side-nav-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { QuickTodoDialogComponent } from '../modules/todos/quick-todo-dialog/quick-todo-dialog.component';
+import { AuraMenuComponent } from '../modules/aura/aura-menu/aura-menu.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     CardComponent,
     PieComponent,
     SideNavListComponent,
+    AuraMenuComponent,
   ],
   imports: [
     CommonModule,
@@ -46,7 +49,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     HighchartsChartModule,
     MatTooltipModule,
     MatSlideToggleModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule
   ],
   exports: [
     HeaderComponent,
@@ -55,7 +59,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AreaComponent,
     CardComponent,
     PieComponent,
-    SideNavListComponent
+    SideNavListComponent,
+    AuraMenuComponent
   ]
 })
 export class SharedModule {

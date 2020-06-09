@@ -49,7 +49,7 @@ const muiModules = [
   MatSnackBarModule,
   MatDialogModule,
   MatMenuModule,
-  MatNativeDateModule
+  MatNativeDateModule,
 ];
 
 @NgModule({
