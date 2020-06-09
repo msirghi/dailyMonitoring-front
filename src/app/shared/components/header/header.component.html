@@ -12,15 +12,15 @@
       </button>
     </div>
 
-    <div >
+    <div>
       <ul fxLayout="row" fxLayoutGap="10px">
         <li>
-          <button mat-icon-button>
+          <button mat-icon-button (click)="quickTodoAddHandler()">
             <mat-icon matTooltip="Quick add new task">add</mat-icon>
           </button>
         </li>
         <li matTooltip="Achievements">
-          <button mat-icon-button style="display: flex; align-items: center">
+          <button class="aura-btn" mat-icon-button>
             <mat-icon>poll</mat-icon>
             <span>1/5</span>
           </button>
@@ -29,8 +29,8 @@
           <button mat-button [matMenuTriggerFor]="menu">
             <mat-icon>settings</mat-icon>
           </button>
-          <mat-menu #menu="matMenu" style="margin-right: 1rem;">
-            <div style="width: 20rem;">
+          <mat-menu class="settings-menu" #menu="matMenu">
+            <div class="menu-wrapper">
               <button (click)="navigateAccountPage()" mat-menu-item>
                 <mat-icon>account_circle</mat-icon>
                 Account
@@ -56,21 +56,20 @@
                 Sign out
               </button>
               <mat-divider></mat-divider>
-              <div class="apps" style="margin-top: 1rem; margin-bottom: 1rem;">
-                <span style="font-size: 1.4rem; margin-left: 2rem;">Apps</span>
-                <div style="margin-top: 1rem;display: flex; justify-content: space-around">
-                  <mat-icon matTooltip="Android" style="color: #3DDC84;">android</mat-icon>
+              <div class="apps">
+                <span>Apps</span>
+                <div class="platform-icons">
+                  <mat-icon matTooltip="Android" class="android">android</mat-icon>
                   <mat-icon matTooltip="Desktop" color="primary">computer</mat-icon>
                 </div>
               </div>
               <mat-divider></mat-divider>
-              <div style="margin-top: 1rem; display: flex; align-items: center; flex-direction: column;">
+              <div class="app-version">
                 <img src="assets/logo_transparent_2.png" alt="" height="70">
-                <span style="font-size: 1.4rem;">App version 0.1</span>
+                <span>App version 0.1</span>
               </div>
             </div>
           </mat-menu>
-
         </li>
       </ul>
     </div>

@@ -1,4 +1,6 @@
 <div class="alerts-wrapper">
+
+  <span *ngIf="projectAlerts.length === 0" class="no-alerts">No alerts for this project.</span>
   <div [class]="'alert ' + projectAlerts[0].type" *ngIf="projectAlerts.length > 0">
     <strong>{{projectAlerts[0].authorName}}: &nbsp;</strong> {{projectAlerts[0].message}}
     <span class="date">{{projectAlerts[0].date}}

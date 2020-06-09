@@ -1,8 +1,9 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { AuthService } from '../../../modules/auth/auth.service';
 import { Router } from '@angular/router';
-import { MatSlideToggleChange } from '@angular/material';
+import { MatDialog, MatSlideToggleChange } from '@angular/material';
 import { ColorSchemeService } from '../../../modules/settings/color-scheme.service';
+import { QuickTodoDialogComponent } from '../../../modules/todos/quick-todo-dialog/quick-todo-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -29,7 +30,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router: Router,
-              private colorSchemeService: ColorSchemeService) {
+              private colorSchemeService: ColorSchemeService,
+              private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -61,5 +63,11 @@ export class HeaderComponent implements OnInit {
     } else {
       this.colorSchemeService.update(this.themes[1].name);
     }
+  }
+
+  quickTodoAddHandler() {
+    this.dialog.open(QuickTodoDialogComponent, {
+      width: '300px'
+    });
   }
 }

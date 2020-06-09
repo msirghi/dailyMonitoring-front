@@ -30,8 +30,8 @@ export class ProjectAlertCreationComponent implements OnInit {
   ngOnInit() {
     this.alertForm = new FormGroup({
       message: new FormControl(this.data.message || '', [Validators.required]),
-      notifyMembers: new FormControl(''),
-      date: new FormControl(this.data.date || '')
+      date: new FormControl(this.data.date || ''),
+      areMembersNotified: new FormControl(false)
     });
 
     this.editMode = this.data.editMode;
@@ -46,10 +46,16 @@ export class ProjectAlertCreationComponent implements OnInit {
   }
 
   onSubmit() {
-    const { message } = this.alertForm.value;
+    const { message, areMembersNotified } = this.alertForm.value;
     const date = new Date(this.alertForm.value.date);
 
-    this.projectAlertsService.addAlert(this.data.projectId, { message, date, type: this.selectedType.value.toUpperCase() });
+    this.projectAlertsService.addAlert(this.data.projectId, {
+      message,
+      date,
+      // @ts-ignore
+      type: this.selectedType.value.toUpperCase(),
+      areMembersNotified
+    });
     this.dialogRef.close(true);
   }
 
@@ -58,13 +64,14 @@ export class ProjectAlertCreationComponent implements OnInit {
   }
 
   onUpdate() {
-    const { message } = this.alertForm.value;
+    const { message, areMembersNotified } = this.alertForm.value;
 
     this.projectAlertsService.updateAlert(this.data.projectId, this.alertId, {
       message,
       date: new Date(this.alertForm.value.date),
       // @ts-ignore
-      type: this.selectedType.value.toUpperCase()
+      type: this.selectedType.value.toUpperCase(),
+      areMembersNotified
     });
     this.dialogRef.close(true);
   }

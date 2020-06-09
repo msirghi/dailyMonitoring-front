@@ -7,6 +7,12 @@
   border-radius: 1px;
 }
 
+.no-alerts {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
 .warning {
   color: #000;
   background-color: #ffaa2c;

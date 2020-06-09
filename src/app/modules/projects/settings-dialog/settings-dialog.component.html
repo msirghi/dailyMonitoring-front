@@ -78,13 +78,28 @@
           <span> <mat-icon color="primary">perm_identity</mat-icon>
             {{ user.fullName }} </span>
           <div class="user-options">
-            <mat-icon color="primary" [matTooltip]="'Mail to '+user.email" (click)="mailUser(user.email)">email
+            <mat-icon
+              *ngIf="user.id !== loggedUserId"
+              color="primary"
+              [matTooltip]="'Mail to ' + user.email"
+              (click)="mailUser(user.email)">
+              email
             </mat-icon>
             <mat-icon
+              *ngIf="user.id !== loggedUserId"
               color="accent"
-              [matTooltip]="'Remove '+user.fullName + ' from the project'"
+              [matTooltip]="'Remove ' + user.fullName + ' from the project'"
               (click)="onUserRemove(user)"
-            >delete
+            >
+              delete
+            </mat-icon>
+            <mat-icon
+              *ngIf="user.id === loggedUserId"
+              color="accent"
+              matTooltip="Exit the project"
+              (click)="onUserRemove(user)"
+            >
+              exit_to_app
             </mat-icon>
           </div>
         </div>

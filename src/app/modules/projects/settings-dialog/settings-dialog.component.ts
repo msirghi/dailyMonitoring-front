@@ -7,6 +7,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ProjectService } from '../project.service';
 import { Router } from '@angular/router';
 import { fadeInAnimation } from '../../../animations/fadeIn.animation';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-settings-dialog',
@@ -24,12 +25,14 @@ export class SettingsDialogComponent implements OnInit {
   deleteButtonClicked = false;
   selectedColor: ColorModel;
   isProjectColorInputDisabled = true;
+  loggedUserId: number;
 
   constructor(@Inject(MAT_DIALOG_DATA) private passedData: any,
               private projectUserService: ProjectUserService,
               private projectService: ProjectService,
               private snackBar: MatSnackBar,
-              private router: Router) {
+              private router: Router,
+              private authService: AuthService) {
     this.projectName = passedData.projectName;
   }
 
@@ -38,6 +41,7 @@ export class SettingsDialogComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loggedUserId = this.authService.getUserId();
     this.selectedColor = this.passedData.projectColor;
     this.nameForm = new FormGroup({
       name: new FormControl(this.passedData.projectName)

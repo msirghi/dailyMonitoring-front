@@ -30,7 +30,7 @@
       </mat-form-field>
     </div>
     <div class="checkbox">
-      <mat-checkbox>Notify all members</mat-checkbox>
+      <mat-checkbox formControlName="areMembersNotified">Notify all members</mat-checkbox>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
       mat-stroked-button
       color="primary"
       (click)="editMode ? onUpdate() : onSubmit()"
-      [disabled]="!alertForm.valid || !selectedType">
+      [disabled]="!alertForm.valid || !selectedType || !selectedType.value">
       {{editMode ? 'Update' : 'Publish'}}
     </button>
   </div>

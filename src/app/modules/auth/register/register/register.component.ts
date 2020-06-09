@@ -6,7 +6,7 @@ import { fadeInAnimation } from '../../../../animations/fadeIn.animation';
 import { fadeInOutAnimation } from '../../../../animations/fadeInOut.animation';
 import { HttpErrorModel } from '../../../../models/httpError.model';
 import { MailClientModel } from '../../../../models/mailClient.model';
-import { AuthService } from '../../../auth/auth.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-register',

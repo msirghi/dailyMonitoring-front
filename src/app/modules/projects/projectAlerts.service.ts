@@ -22,7 +22,7 @@ export class ProjectAlertsService {
       });
   }
 
-  addAlert(projectId: number, newAlert: { date: Date; message: any; type: string }) {
+  addAlert(projectId: number, newAlert: ProjectAlertModel) {
     this.http.post<ProjectAlertModel>(`${ IP }${ PORT }/users/${ this.auth.getUserId() }/projects/${ projectId }/alerts`,
       { ...newAlert }, JSON_HEADER)
       .subscribe(alert => {
@@ -62,7 +62,7 @@ export class ProjectAlertsService {
 
   updateAlert(projectId: number, alertId: number, updatedAlert: ProjectAlertModel) {
     this.http.put<ProjectAlertModel>(`${ IP }${ PORT }/users/${ this.auth.getUserId() }/projects/${ projectId }/alerts/${ alertId }`,
-      { ...updatedAlert }, JSON_HEADER)
+      { ...updatedAlert}, JSON_HEADER)
       .subscribe((alert) => {
         this.currentAlerts = [...this.currentAlerts.map(val => {
           if (val.id === alert.id) {

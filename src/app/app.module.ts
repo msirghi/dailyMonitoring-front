@@ -24,7 +24,7 @@ import { ProjectAlertsService } from './modules/projects/projectAlerts.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

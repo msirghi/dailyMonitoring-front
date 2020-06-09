@@ -3,9 +3,9 @@ ul li {
 }
 
 mat-toolbar-row {
-  -webkit-box-shadow: 0px 8px 22px -11px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 8px 22px -11px rgba(0,0,0,0.75);
-  box-shadow: 0px 8px 22px -11px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0 8px 22px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 8px 22px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 8px 22px -11px rgba(0, 0, 0, 0.75);
 }
 
 mat-toolbar {
@@ -21,4 +21,48 @@ mat-toolbar {
 .mat-toolbar-row {
   min-height: 50px !important;
   height: 50px !important;
+}
+
+.app-version {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  & span {
+    font-size: 1.4rem;
+  }
+}
+
+.apps {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  & span {
+    font-size: 1.4rem;
+    margin-left: 2rem;
+  }
+}
+
+.platform-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+
+  .android {
+    color: #3DDC84;
+  }
+}
+
+.settings-menu {
+  margin-right: 1rem;
+}
+
+.menu-wrapper {
+  width: 20rem;
+}
+
+.aura-btn {
+  display: flex;
+  align-items: center;
 }
