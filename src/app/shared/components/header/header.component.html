@@ -20,13 +20,19 @@
           </button>
         </li>
         <li>
-          <button mat-icon-button (click)="quickTodoAddHandler()">
-            <mat-icon matBadge="15" matBadgeColor="primary">notifications</mat-icon>
+          <button mat-icon-button #notificationMenuMenuTrigger="matMenuTrigger" [matMenuTriggerFor]="notificationMenu"
+                  (click)="openNotificationMenu()">
+            <mat-icon *ngIf="notifications.length" [matBadge]="notifications.length" matBadgeColor="primary">notifications</mat-icon>
+            <mat-icon *ngIf="!notifications.length">notifications</mat-icon>
           </button>
+          <mat-menu class="settings-menu" #notificationMenu="matMenu">
+            <!--            <app-notification-tray  *ngIf="notificationMenuMenuTrigger.menuOpen"></app-notification-tray>-->
+            <app-notification-tray></app-notification-tray>
+          </mat-menu>
         </li>
         <li matTooltip="Aura">
           <button #menuTrigger="matMenuTrigger" mat-icon-button [matMenuTriggerFor]="auraMenu" (click)="openAuraMenu()">
-            <img height="25" src="assets/icons/self_improvement.svg" alt="">
+            <img height="25" src="assets/icons/self_improvement.svg" alt="aura">
           </button>
           <mat-menu class="settings-menu" #auraMenu="matMenu">
             <app-aura-menu *ngIf="matMenuTrigger.menuOpen"></app-aura-menu>

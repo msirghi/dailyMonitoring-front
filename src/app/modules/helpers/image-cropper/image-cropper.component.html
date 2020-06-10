@@ -1,13 +1,13 @@
 <h3 mat-dialog-title>Image upload</h3>
 
 <div mat-dialog-content>
-  <input type="file" (change)="fileChangeEvent($event)" />
+  <input type="file" accept=".jpg,.png,.jpeg" (change)="fileChangeEvent($event)" />
   <image-cropper
     [imageChangedEvent]="imageChangedEvent"
     [maintainAspectRatio]="true"
     [containWithinAspectRatio]="containWithinAspectRatio"
     [aspectRatio]="3 / 3"
-    [resizeToWidth]="256"
+    [resizeToWidth]="128"
     [cropperMinWidth]="128"
     [onlyScaleDown]="true"
     [roundCropper]="true"

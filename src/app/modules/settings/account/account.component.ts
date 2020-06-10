@@ -117,8 +117,10 @@ export class AccountComponent implements OnInit, OnDestroy {
     const dialogRef = this.dialog.open(ImageCropperComponent);
 
     dialogRef.afterClosed().subscribe(res => {
-      this.isLoading = true;
-      this.accountService.updateImage(res);
+      if (res) {
+        this.isLoading = true;
+        this.accountService.updateImage(res);
+      }
     });
   }
 }

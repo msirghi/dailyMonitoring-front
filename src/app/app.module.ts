@@ -22,7 +22,7 @@ import { ColorSchemeService } from './modules/settings/color-scheme.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ProjectAlertsService } from './modules/projects/projectAlerts.service';
 import { AuraService } from './modules/aura.service';
-import { ImageCropperComponent } from './modules/helpers/image-cropper/image-cropper.component';
+import { NotificationService } from './modules/notifications/notification.service';
 
 @NgModule({
   declarations: [
@@ -52,6 +52,7 @@ import { ImageCropperComponent } from './modules/helpers/image-cropper/image-cro
     ColorSchemeService,
     AuraService,
     ProjectAlertsService,
+    NotificationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

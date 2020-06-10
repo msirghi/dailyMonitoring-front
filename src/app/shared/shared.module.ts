@@ -6,8 +6,10 @@ import {
   MatDividerModule,
   MatIconModule,
   MatListModule,
-  MatMenuModule, MatProgressSpinnerModule,
-  MatSlideToggleModule, MatTabsModule,
+  MatMenuModule,
+  MatProgressSpinnerModule,
+  MatSlideToggleModule,
+  MatTabsModule,
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
@@ -23,8 +25,8 @@ import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { SideNavListComponent } from './components/side-nav-list/side-nav-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { QuickTodoDialogComponent } from '../modules/todos/quick-todo-dialog/quick-todo-dialog.component';
 import { AuraMenuComponent } from '../modules/aura/aura-menu/aura-menu.component';
+import { NotificationTrayComponent } from '../modules/notifications/notification-tray/notification-tray.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { AuraMenuComponent } from '../modules/aura/aura-menu/aura-menu.component
     PieComponent,
     SideNavListComponent,
     AuraMenuComponent,
+    NotificationTrayComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +66,8 @@ import { AuraMenuComponent } from '../modules/aura/aura-menu/aura-menu.component
     CardComponent,
     PieComponent,
     SideNavListComponent,
-    AuraMenuComponent
+    AuraMenuComponent,
+    NotificationTrayComponent
   ]
 })
 export class SharedModule {

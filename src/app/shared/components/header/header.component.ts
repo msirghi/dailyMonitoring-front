@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { MatDialog, MatMenuTrigger, MatSlideToggleChange } from '@angular/material';
 import { ColorSchemeService } from '../../../modules/settings/color-scheme.service';
 import { QuickTodoDialogComponent } from '../../../modules/todos/quick-todo-dialog/quick-todo-dialog.component';
+import { Subscription } from 'rxjs';
+import { NotificationModel } from '../../../models/notification.model';
+import { NotificationService } from '../../../modules/notifications/notification.service';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +18,9 @@ export class HeaderComponent implements OnInit {
   @Input('isButtonDisplayed') isButtonDisplayed: boolean;
   @ViewChild('toggleElement', { static: true }) ref: ElementRef;
   @ViewChild('menuTrigger', { static: true }) matMenuTrigger: MatMenuTrigger;
+  @ViewChild('notificationMenuMenuTrigger', { static: true }) notificationMenuMenuTrigger: MatMenuTrigger;
+  notificationSubscription: Subscription;
+  notifications: Array<NotificationModel> = [];
 
   checked = false;
 
@@ -32,12 +38,19 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService,
               private router: Router,
               private colorSchemeService: ColorSchemeService,
-              private dialog: MatDialog) {
+              private dialog: MatDialog,
+              private notificationService: NotificationService) {
   }
 
   ngOnInit() {
     this.colorSchemeService.load();
     this.checked = this.colorSchemeService.currentActive() === 'dark';
+    setTimeout(() => this.notificationService.fetchAllNotifications(), 1500);
+    this.notificationSubscription = this.notificationService.notificationsChanged
+      .subscribe(notifications => {
+        console.log(notifications);
+        this.notifications = notifications;
+      });
   }
 
   toggleSideBar() {
@@ -74,5 +87,9 @@ export class HeaderComponent implements OnInit {
 
   openAuraMenu() {
     this.matMenuTrigger.openMenu();
+  }
+
+  openNotificationMenu() {
+    this.notificationMenuMenuTrigger.openMenu();
   }
 }

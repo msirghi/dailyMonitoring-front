@@ -52,6 +52,7 @@ import { QuickTodoDialogComponent } from '../../modules/todos/quick-todo-dialog/
 import { AuraMenuComponent } from 'src/app/modules/aura/aura-menu/aura-menu.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ImageCropperComponent } from '../../modules/helpers/image-cropper/image-cropper.component';
+import { NotificationTrayComponent } from '../../modules/notifications/notification-tray/notification-tray.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,7 @@ import { ImageCropperComponent } from '../../modules/helpers/image-cropper/image
     ProjectAlertCreationComponent,
     ConfirmationDialogComponent,
     QuickTodoDialogComponent,
-    ImageCropperComponent
+    ImageCropperComponent,
   ],
   imports: [
     CommonModule,
@@ -123,7 +124,8 @@ import { ImageCropperComponent } from '../../modules/helpers/image-cropper/image
     }
   ],
   exports: [
-    AuraMenuComponent
+    AuraMenuComponent,
+    NotificationTrayComponent
   ],
   entryComponents: [
     PopupDialogComponent,
