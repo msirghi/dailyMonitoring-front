@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  MatBadgeModule,
   MatButtonModule,
   MatDividerModule,
   MatIconModule,
@@ -51,7 +52,8 @@ import { AuraMenuComponent } from '../modules/aura/aura-menu/aura-menu.component
     MatSlideToggleModule,
     DragDropModule,
     MatTabsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatBadgeModule
   ],
   exports: [
     HeaderComponent,

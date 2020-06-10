@@ -4,4 +4,5 @@ export interface UserInfoModel {
   username?: string;
   email?: string;
   fullName?: string;
+  imageName?: string;
 }

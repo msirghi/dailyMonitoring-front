@@ -19,6 +19,11 @@
             <mat-icon matTooltip="Quick add new task">add</mat-icon>
           </button>
         </li>
+        <li>
+          <button mat-icon-button (click)="quickTodoAddHandler()">
+            <mat-icon matBadge="15" matBadgeColor="primary">notifications</mat-icon>
+          </button>
+        </li>
         <li matTooltip="Aura">
           <button #menuTrigger="matMenuTrigger" mat-icon-button [matMenuTriggerFor]="auraMenu" (click)="openAuraMenu()">
             <img height="25" src="assets/icons/self_improvement.svg" alt="">

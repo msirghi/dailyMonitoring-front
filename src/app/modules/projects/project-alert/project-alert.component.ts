@@ -29,13 +29,14 @@ export class ProjectAlertComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.projectAlertsService.fetchAllAlerts(this.projectId);
     this.subscription = this.projectAlertsService.alertsChanged
-      .subscribe(alerts => {
-        this.projectAlerts = alerts.map(al => {
-          // @ts-ignore
-          al.type = al.type.toLocaleLowerCase();
-          return al;
+      .subscribe(
+        alerts => {
+          this.projectAlerts = alerts.map(al => {
+            // @ts-ignore
+            al.type = al.type.toLocaleLowerCase();
+            return al;
+          });
         });
-      });
   }
 
   ngOnDestroy() {

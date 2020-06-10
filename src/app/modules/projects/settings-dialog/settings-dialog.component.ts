@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef, MatSnackBar } from '@angular/material';
 import { ProjectUserService } from '../projectUser.service';
 import { Subscription } from 'rxjs';
 import { UserModel } from '../../../models/user.model';
@@ -28,6 +28,7 @@ export class SettingsDialogComponent implements OnInit {
   loggedUserId: number;
 
   constructor(@Inject(MAT_DIALOG_DATA) private passedData: any,
+              public dialogRef: MatDialogRef<SettingsDialogComponent>,
               private projectUserService: ProjectUserService,
               private projectService: ProjectService,
               private snackBar: MatSnackBar,
@@ -59,7 +60,15 @@ export class SettingsDialogComponent implements OnInit {
     this.projectUserService.removeUserFromTheProject(this.passedData.projectId, user.id)
       .then(() => {
         this.projectUserService.getAllProjectUsers(this.passedData.projectId);
-        this.snackBar.open(`${ user.fullName } successfully removed from the project.`, '');
+
+        if (user.id === this.authService.getUserId()) {
+          this.router.navigate(['/']);
+          this.snackBar.open('Successfully removed');
+          this.dialogRef.close();
+          this.projectService.fetchAllProjects();
+        } else {
+          this.snackBar.open(`${ user.fullName } successfully removed from the project.`, '');
+        }
       });
   }
 

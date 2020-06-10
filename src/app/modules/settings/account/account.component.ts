@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { IP, PORT } from '../../../constants';
 
 @Component({
   selector: 'app-account',
@@ -21,6 +22,8 @@ export class AccountComponent implements OnInit, OnDestroy {
   isTopLoaderEnabled = false;
   editMode = false;
   isSaveButtonDisabled = false;
+  imageUrl = '';
+  selectedFile: File = null;
 
   constructor(private accountService: AccountService,
               private snackBar: MatSnackBar,
@@ -40,6 +43,7 @@ export class AccountComponent implements OnInit, OnDestroy {
 
     this.accountSubscription = this.accountService.userInfoChanged.subscribe(user => {
       this.isLoading = false;
+      this.imageUrl = `${ IP }${ PORT }/images/${ user.imageName }`;
       this.personalInfoForm.patchValue({
         fullName: user.fullName,
         username: user.username,
@@ -106,5 +110,15 @@ export class AccountComponent implements OnInit, OnDestroy {
 
   navigateAccountReset() {
     this.router.navigate(['/resetPwd']);
+  }
+
+  onFileSelected($event: Event) {
+    console.log($event);
+    this.selectedFile = (<HTMLInputElement> $event.target).files[0];
+  }
+
+  updateAccountAvatar() {
+    this.isLoading = true;
+    this.accountService.updateImage(this.selectedFile);
   }
 }

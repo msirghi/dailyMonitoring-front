@@ -13,6 +13,8 @@ import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.comp
 import { ProjectService } from '../project.service';
 import { ColorPickerComponent } from '../color-picker/color-picker.component';
 import { EditTaskDialogComponent } from '../../helpers/edit-task-dialog/edit-task-dialog.component';
+import { ProjectAlertModel } from '../../../models/projectAlert.model';
+import { ProjectAlertsService } from '../projectAlerts.service';
 
 @Component({
   selector: 'app-project',
@@ -41,7 +43,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
               private projectTaskService: ProjectTaskService,
               private projectService: ProjectService,
               private router: Router,
-              private activeRoute: ActivatedRoute) {
+              private activeRoute: ActivatedRoute,
+              private projectAlertsService: ProjectAlertsService) {
     this.title.setTitle(`Daily Monitoring | Project`);
   }
 
@@ -95,6 +98,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
       this.selectedProjectId = routeParams.id;
       this.doRequests();
       this.projectService.getCurrentProjectName(routeParams.id);
+      this.projectAlertsService.fetchAllAlerts(this.selectedProjectId);
     });
     this.doRequests();
   }

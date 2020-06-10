@@ -28,7 +28,6 @@
 
 .total-points {
   @include align-center;
-  //font-size: 5rem;
   margin-top: 1rem;
 
   & mat-icon {
@@ -51,6 +50,7 @@
 
 .pb-1 {
   padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 ::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active {
