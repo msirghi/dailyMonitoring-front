@@ -50,6 +50,8 @@ import { ProjectAlertCreationComponent } from '../../modules/projects/project-al
 import { ConfirmationDialogComponent } from '../../modules/helpers/confirmation-dialog/confirmation-dialog.component';
 import { QuickTodoDialogComponent } from '../../modules/todos/quick-todo-dialog/quick-todo-dialog.component';
 import { AuraMenuComponent } from 'src/app/modules/aura/aura-menu/aura-menu.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { ImageCropperComponent } from '../../modules/helpers/image-cropper/image-cropper.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +93,8 @@ import { AuraMenuComponent } from 'src/app/modules/aura/aura-menu/aura-menu.comp
     ProjectAlertComponent,
     ProjectAlertCreationComponent,
     ConfirmationDialogComponent,
-    QuickTodoDialogComponent
+    QuickTodoDialogComponent,
+    ImageCropperComponent
   ],
   imports: [
     CommonModule,
@@ -104,7 +107,8 @@ import { AuraMenuComponent } from 'src/app/modules/aura/aura-menu/aura-menu.comp
     ReactiveFormsModule,
     InViewportModule,
     HighchartsChartModule,
-    MaterialModule
+    MaterialModule,
+    ImageCropperModule
   ],
   providers: [
     DashboardService,
@@ -129,7 +133,8 @@ import { AuraMenuComponent } from 'src/app/modules/aura/aura-menu/aura-menu.comp
     EditTaskDialogComponent,
     ProjectAlertCreationComponent,
     ConfirmationDialogComponent,
-    QuickTodoDialogComponent
+    QuickTodoDialogComponent,
+    ImageCropperComponent
   ]
 })
 export class DefaultModule {

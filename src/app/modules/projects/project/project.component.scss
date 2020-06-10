@@ -5,6 +5,10 @@
   z-index: 1;
 }
 
+.assigned-to {
+  border-radius: 50%;
+}
+
 ::ng-deep .custom-frame {
   & .mat-checkbox-background, .mat-checkbox-frame {
     border-radius: 70% !important;

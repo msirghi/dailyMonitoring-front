@@ -88,7 +88,7 @@
                     [matTooltip]="task.user.fullName"
                     matTooltipPosition='above'
                   >
-                  <img src="assets/100-balloons.png" height="25" width="25"/>
+                  <img class="assigned-to" [alt]="task.user.fullName" [src]="task.user.url" height="25" width="25"/>
                 </span>
                 </div>
               </div>

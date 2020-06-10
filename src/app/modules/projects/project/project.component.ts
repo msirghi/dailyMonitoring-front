@@ -13,8 +13,8 @@ import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.comp
 import { ProjectService } from '../project.service';
 import { ColorPickerComponent } from '../color-picker/color-picker.component';
 import { EditTaskDialogComponent } from '../../helpers/edit-task-dialog/edit-task-dialog.component';
-import { ProjectAlertModel } from '../../../models/projectAlert.model';
 import { ProjectAlertsService } from '../projectAlerts.service';
+import { IP, PORT } from '../../../constants';
 
 @Component({
   selector: 'app-project',
@@ -66,7 +66,10 @@ export class ProjectComponent implements OnInit, OnDestroy {
     this.currentTaskSubscription = this.projectTaskService.currentTaskChanged
       .subscribe((tasks: Array<any>) => {
         this.topLoaderEnabled = false;
-        this.currentTasks = tasks;
+        this.currentTasks = tasks.map(task => {
+          task.user.url = `${ IP }${ PORT }/images/${ task.user.username }`;
+          return task;
+        });
       });
 
     this.doneTasksSubscription = this.projectTaskService.pastTasksChanged

@@ -3,10 +3,11 @@ import { fadeInAnimation } from '../../../animations/fadeIn.animation';
 import { AccountService } from '../account.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { MatSnackBar } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { IP, PORT } from '../../../constants';
+import { ImageCropperComponent } from '../../helpers/image-cropper/image-cropper.component';
 
 @Component({
   selector: 'app-account',
@@ -23,12 +24,12 @@ export class AccountComponent implements OnInit, OnDestroy {
   editMode = false;
   isSaveButtonDisabled = false;
   imageUrl = '';
-  selectedFile: File = null;
 
   constructor(private accountService: AccountService,
               private snackBar: MatSnackBar,
               private router: Router,
-              private title: Title) {
+              private title: Title,
+              private dialog: MatDialog) {
     title.setTitle('Daily Monitoring | Account');
   }
 
@@ -112,13 +113,12 @@ export class AccountComponent implements OnInit, OnDestroy {
     this.router.navigate(['/resetPwd']);
   }
 
-  onFileSelected($event: Event) {
-    console.log($event);
-    this.selectedFile = (<HTMLInputElement> $event.target).files[0];
-  }
-
   updateAccountAvatar() {
-    this.isLoading = true;
-    this.accountService.updateImage(this.selectedFile);
+    const dialogRef = this.dialog.open(ImageCropperComponent);
+
+    dialogRef.afterClosed().subscribe(res => {
+      this.isLoading = true;
+      this.accountService.updateImage(res);
+    });
   }
 }
