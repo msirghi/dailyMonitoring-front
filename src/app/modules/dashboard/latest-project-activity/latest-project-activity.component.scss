@@ -47,13 +47,6 @@
   .vertical-divider {
     display: none;
   }
-
-  .project-activity {
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: center;
-    //align-items: center;
-  }
 }
 
 .task-project-line {
@@ -107,4 +100,42 @@ hr {
   width: 96%;
   background-color: #FFFF00;
   height: 1px;
+}
+
+.title {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+  & mat-icon {
+    margin-left: 1rem;
+  }
+}
+
+.last-task-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.last-task-item {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.task-wrapper {
+  & .task-options {
+    display: flex;
+
+    & span {
+      font-family: 'Roboto', serif;
+      font-size: 1.3rem;
+      margin-left: auto;
+    }
+  }
+}
+
+.divider {
+  padding: 2rem;
 }

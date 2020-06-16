@@ -3,9 +3,11 @@ import { fadeInAnimation } from '../../../animations/fadeIn.animation';
 import { AccountService } from '../account.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { MatSnackBar } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { IP, PORT } from '../../../constants';
+import { ImageCropperComponent } from '../../helpers/image-cropper/image-cropper.component';
 
 @Component({
   selector: 'app-account',
@@ -21,11 +23,13 @@ export class AccountComponent implements OnInit, OnDestroy {
   isTopLoaderEnabled = false;
   editMode = false;
   isSaveButtonDisabled = false;
+  imageUrl = '';
 
   constructor(private accountService: AccountService,
               private snackBar: MatSnackBar,
               private router: Router,
-              private title: Title) {
+              private title: Title,
+              private dialog: MatDialog) {
     title.setTitle('Daily Monitoring | Account');
   }
 
@@ -40,6 +44,7 @@ export class AccountComponent implements OnInit, OnDestroy {
 
     this.accountSubscription = this.accountService.userInfoChanged.subscribe(user => {
       this.isLoading = false;
+      this.imageUrl = `${ IP }${ PORT }/images/${ user.imageName }`;
       this.personalInfoForm.patchValue({
         fullName: user.fullName,
         username: user.username,
@@ -106,5 +111,16 @@ export class AccountComponent implements OnInit, OnDestroy {
 
   navigateAccountReset() {
     this.router.navigate(['/resetPwd']);
+  }
+
+  updateAccountAvatar() {
+    const dialogRef = this.dialog.open(ImageCropperComponent);
+
+    dialogRef.afterClosed().subscribe(res => {
+      if (res) {
+        this.isLoading = true;
+        this.accountService.updateImage(res);
+      }
+    });
   }
 }

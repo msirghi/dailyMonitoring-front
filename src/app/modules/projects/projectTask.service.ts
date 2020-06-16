@@ -4,10 +4,11 @@ import { IP, JSON_HEADER, PORT } from '../../constants';
 import { Subject } from 'rxjs';
 import { TaskModel } from '../../models/task.model';
 import { AuthService } from '../auth/auth.service';
+import { ProjectTaskModel } from '../../models/projectTask.model';
 
 @Injectable()
 export class ProjectTaskService {
-  currentTaskChanged = new Subject();
+  currentTaskChanged = new Subject<Array<ProjectTaskModel>>();
   pastTasksChanged = new Subject<Array<TaskModel>>();
   private currentTasks = [];
   private lastDoneTasks = [];
@@ -51,7 +52,7 @@ export class ProjectTaskService {
     this.http.post(`${ IP }${ PORT }/users/${ this.authService.getUserId() }/projects/${ projectId }/tasks`, newTask, JSON_HEADER)
       .toPromise()
       .then(res => {
-        this.currentTasks.push({ user: { fullName: (res as any).assignedToName }, task: { ...res } });
+        this.currentTasks.push({ user: { fullName: (res as any).assignedToName, username: (res as any).username }, task: { ...res } });
         this.currentTaskChanged.next([...this.currentTasks]);
       });
   }

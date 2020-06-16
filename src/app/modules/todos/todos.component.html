@@ -46,18 +46,18 @@
           <div class="current-tasks__item">
             <div matTooltip="Click to mark as completed" class="current-tasks__item">
               <mat-checkbox class="custom-frame"></mat-checkbox>
-              {{task.name}}
+              <span style="margin-left: 1rem;">{{task.name}} </span>
             </div>
             <mat-divider></mat-divider>
-            <div
-              class="current-tasks__item__options"
-              matTooltip="Task details"
-              matTooltipPosition='above'
-            >
-              <button mat-button class="details-button" (click)="openDetailsDialog($event, task)">
-                <mat-icon color="primary">info</mat-icon>
-              </button>
-            </div>
+<!--            <div-->
+<!--              class="current-tasks__item__options"-->
+<!--              matTooltip="Task details"-->
+<!--              matTooltipPosition='above'-->
+<!--            >-->
+<!--              <button mat-button class="details-button" (click)="openDetailsDialog($event, task)">-->
+<!--                <mat-icon color="primary">info</mat-icon>-->
+<!--              </button>-->
+<!--            </div>-->
           </div>
         </mat-list-option>
       </mat-selection-list>

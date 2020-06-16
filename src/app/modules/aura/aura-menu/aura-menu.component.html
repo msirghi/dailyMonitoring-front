@@ -1,0 +1,53 @@
+<div class="spinner-wrapper" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div class="wrapper" (click)="$event.stopPropagation()" *ngIf="!isLoading">
+  <div class="title">
+    <h3>Your aura</h3>
+  </div>
+
+  <div class="completed-tasks">
+    <span>{{auraData.totalCompletedTasks}} completed tasks</span>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <mat-tab-group mat-align-tabs="center" selectedIndex="0">
+    <mat-tab label="Aura">
+      <div class="content">
+        <div class="points">
+          <span class="total-points">
+            <mat-icon color="primary">sentiment_very_satisfied</mat-icon>
+          </span>
+          <span class="points-title">You are an
+            <span class="aura-status">Intermediate</span>
+            <br/>
+            <span class="points-count">with {{auraData.auraCount}} points </span>
+            </span>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="help pb-1">
+        <button mat-raised-button>
+          <span>Learn more about aura</span>
+        </button>
+      </div>
+    </mat-tab>
+    <mat-tab label="Goal">
+      <div class="task-wrapper">
+        <object id="svg1" data="/assets/icons/psychology.svg" type="image/svg+xml"></object>
+        <span> Daily goal:  <b>{{auraData.tasksDone}}/{{auraData.dailyGoal}} tasks</b></span>
+        <div class="help pb-1">
+          <mat-divider></mat-divider>
+          <button mat-raised-button>
+            <mat-icon color="primary">settings</mat-icon>
+            <span>Daily goal settings</span>
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

@@ -21,10 +21,12 @@ import { AccountService } from './modules/settings/account.service';
 import { ColorSchemeService } from './modules/settings/color-scheme.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ProjectAlertsService } from './modules/projects/projectAlerts.service';
+import { AuraService } from './modules/aura.service';
+import { NotificationService } from './modules/notifications/notification.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,9 @@ import { ProjectAlertsService } from './modules/projects/projectAlerts.service';
     DashboardStatisticsService,
     AccountService,
     ColorSchemeService,
+    AuraService,
     ProjectAlertsService,
+    NotificationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

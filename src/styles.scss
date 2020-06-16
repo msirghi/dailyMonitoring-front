@@ -35,6 +35,10 @@ $inside-theme-light: mat-light-theme($inside-primary, $inside-accent, $inside-wa
     background-color: #3d3d3d !important;;
     color: #fff !important;
   }
+
+  mat-drawer {
+    background-color: #eae8eb !important;
+  }
 }
 
 html, body {

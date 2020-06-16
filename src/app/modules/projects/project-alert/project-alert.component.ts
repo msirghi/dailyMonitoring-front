@@ -18,7 +18,6 @@ export class ProjectAlertComponent implements OnInit, OnDestroy {
   @Input() projectId: number;
 
   projectAlerts: Array<ProjectAlertModel> = [];
-  animationState = 'initial';
   subscription: Subscription;
 
   constructor(private dialog: MatDialog,
@@ -29,13 +28,14 @@ export class ProjectAlertComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.projectAlertsService.fetchAllAlerts(this.projectId);
     this.subscription = this.projectAlertsService.alertsChanged
-      .subscribe(alerts => {
-        this.projectAlerts = alerts.map(al => {
-          // @ts-ignore
-          al.type = al.type.toLocaleLowerCase();
-          return al;
+      .subscribe(
+        alerts => {
+          this.projectAlerts = alerts.map(al => {
+            // @ts-ignore
+            al.type = al.type.toLocaleLowerCase();
+            return al;
+          });
         });
-      });
   }
 
   ngOnDestroy() {
@@ -56,9 +56,6 @@ export class ProjectAlertComponent implements OnInit, OnDestroy {
       }
     });
   }
-
-  changeAnimationState = () =>
-    this.animationState = this.animationState === 'initial' ? 'final' : 'initial';
 
   onUpdate(alert: ProjectAlertModel) {
     const dialogRef = this.dialog.open(ProjectAlertCreationComponent, {

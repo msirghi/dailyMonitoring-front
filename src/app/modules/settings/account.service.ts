@@ -43,4 +43,13 @@ export class AccountService {
             });
         }));
   }
+
+  updateImage(selectedFile) {
+    const fd = new FormData();
+    fd.append('imageFile', selectedFile);
+    this.http.patch(`${ IP }${ PORT }/users/${ this.authService.getUserId() }/avatar`, fd)
+      .subscribe(() => {
+        setTimeout(() => this.fetchUserInfo(), 1500);
+      });
+  }
 }

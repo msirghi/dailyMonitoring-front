@@ -1,0 +1,27 @@
+<h3 mat-dialog-title>Image upload</h3>
+
+<div mat-dialog-content>
+  <input type="file" accept=".jpg,.png,.jpeg" (change)="fileChangeEvent($event)" />
+  <image-cropper
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [containWithinAspectRatio]="containWithinAspectRatio"
+    [aspectRatio]="3 / 3"
+    [resizeToWidth]="128"
+    [cropperMinWidth]="128"
+    [onlyScaleDown]="true"
+    [roundCropper]="true"
+    [canvasRotation]="canvasRotation"
+    [transform]="transform"
+    [alignImage]="'left'"
+    [style.display]="showCropper ? null : 'none'"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+  ></image-cropper>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="false" color="accent">Close</button>
+  <button mat-stroked-button (click)="onUpload()" color="primary">Upload</button>
+</div>

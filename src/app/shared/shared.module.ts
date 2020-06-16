@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  MatBadgeModule,
   MatButtonModule,
   MatDividerModule,
   MatIconModule,
   MatListModule,
   MatMenuModule,
+  MatProgressSpinnerModule,
   MatSlideToggleModule,
+  MatTabsModule,
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
@@ -22,6 +25,8 @@ import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { SideNavListComponent } from './components/side-nav-list/side-nav-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AuraMenuComponent } from '../modules/aura/aura-menu/aura-menu.component';
+import { NotificationTrayComponent } from '../modules/notifications/notification-tray/notification-tray.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     CardComponent,
     PieComponent,
     SideNavListComponent,
+    AuraMenuComponent,
+    NotificationTrayComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +53,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     HighchartsChartModule,
     MatTooltipModule,
     MatSlideToggleModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule,
+    MatProgressSpinnerModule,
+    MatBadgeModule
   ],
   exports: [
     HeaderComponent,
@@ -55,7 +65,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AreaComponent,
     CardComponent,
     PieComponent,
-    SideNavListComponent
+    SideNavListComponent,
+    AuraMenuComponent,
+    NotificationTrayComponent
   ]
 })
 export class SharedModule {

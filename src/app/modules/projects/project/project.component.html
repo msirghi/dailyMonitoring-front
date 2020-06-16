@@ -1,28 +1,22 @@
 <app-top-loader *ngIf="topLoaderEnabled"></app-top-loader>
 
-<div class="fade-in" style="padding: 20px">
-  <div class="title__your-tasks">
-    <h3>{{ projectName }}</h3>
+<app-project-header [projectName]="projectName">
+  <app-projects-options
+    [@fadeIn]
+    (toggleCollaborators)="openDetailsDialog($event)"
+    (togglePie)="toggleStatistics()"
+    (toggleSettings)="openSettingsDialog($event)"
+    (toggleNotifications)="toggleNotificationSection($event)"
+    [areStatisticsShown]="areStatisticsShown">
+  </app-projects-options>
+</app-project-header>
 
-    <div class="title-options">
-      <app-projects-options
-        [@fadeIn]
-        (toggleCollaborators)="openDetailsDialog($event)"
-        (togglePie)="toggleStatistics()"
-        (toggleSettings)="openSettingsDialog($event)"
-        [areStatisticsShown]="areStatisticsShown">
-      </app-projects-options>
+<div class="fade-in" style="padding: 15px">
+    <div *ngIf="isNotificationSectionEnabled">
+      <app-project-alert
+        [projectId]="selectedProjectId"
+      ></app-project-alert>
     </div>
-
-  </div>
-
-  <mat-divider></mat-divider>
-
-  <div>
-    <app-project-alert
-      [projectId]="selectedProjectId"
-    ></app-project-alert>
-  </div>
 
   <div [style.display]="areStatisticsShown ? 'block' : 'none'">
     <app-projects-charts
@@ -31,129 +25,110 @@
     </app-projects-charts>
   </div>
 
-  <div *ngIf="!areStatisticsShown">
-    <div class="">
-      <div class="progress-bar">
-<!--        <h4>Today's goal: <span>4</span> out of 5 tasks done</h4>-->
-<!--        <mat-progress-bar mode="determinate" value="80"></mat-progress-bar>-->
-<!--      </div>-->
-<!---->
-<!--      <div class="progress-bar">-->
-<!--        <h4>Weekly goal: <span>20</span> out of 35 tasks done</h4>-->
-<!--        <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>-->
-<!--      </div>-->
-    </div>
+  <div *ngIf="!areStatisticsShown && !isNotificationSectionEnabled">
+    <div>
+      <div class="current-tasks-wrapper">
+        <h4 class="title__current-tasks">
+          <mat-icon color="accent">scatter_plot</mat-icon>
+          <span *ngIf="currentTasks.length !== 0"> {{ currentTasks.length }} task(s) </span>
+          <span *ngIf="currentTasks.length === 0"> Current tasks</span>
+        </h4>
+        <mat-divider></mat-divider>
 
-    <div class="current-tasks-wrapper">
-      <h4 class="title__current-tasks">
-        <mat-icon color="accent">scatter_plot</mat-icon>
-        <span *ngIf="currentTasks.length !== 0"> You have {{ currentTasks.length }} task(s) </span>
-        <span *ngIf="currentTasks.length === 0"> Your current tasks </span>
-      </h4>
-      <mat-divider></mat-divider>
-
-      <div *ngIf="currentTasks.length === 0" [@fadeInOut] class="current-tasks__no-tasks">
-        <div class="no-tasks-images mt-3">
-          <img height="150" src="assets/100-balloons.png" alt="">
+        <div *ngIf="currentTasks.length === 0" [@fadeInOut] class="current-tasks__no-tasks">
+          <div class="no-tasks-images mt-3">
+            <img height="150" src="assets/100-balloons.png" alt="">
+          </div>
+          <h2> Enjoy your time </h2>
+          <span style="margin-top: 0;"> There are no tasks on your list. </span>
         </div>
-        <h2> Enjoy your time </h2>
-        <span style="margin-top: 0;"> There are no tasks on your list. </span>
+
+        <div class="current-tasks" [@fadeInOut]>
+          <mat-selection-list
+            [(ngModel)]="selectedOptions"
+            *ngIf="currentTasks.length !== 0"
+          >
+            <mat-list-option
+              [@fadeInOut]
+              *ngFor="let task of currentTasks"
+              [value]="task"
+              class="ct-wrapper">
+              <div class="current-tasks__item" [@fadeInOut]>
+                <div class="current-tasks__item">
+                  <mat-checkbox
+                    matTooltip="Click to mark as completed"
+                    (click)="markAsCompletedHandler(task)"
+                    class="custom-frame">
+                  </mat-checkbox>
+                  <span style="margin-left: 1rem;">{{task.task.name}} </span>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="current-tasks__item__options">
+                  <button class="edit-button" (click)="updateTask(task)" mat-icon-button matTooltip="Edit task">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <span
+                    [matTooltip]="task.user.fullName"
+                    matTooltipPosition='above'
+                  >
+                  <img class="assigned-to" [alt]="task.user.fullName" [src]="task.user.url" height="25" width="25"/>
+                </span>
+                </div>
+              </div>
+            </mat-list-option>
+          </mat-selection-list>
+          <div class="new-task" *ngIf="animationState === 'initial'">
+            <div class="container fade-in">
+              <button
+                class="new-task__add-button fade-in"
+                mat-button
+                matTooltip="Shift + Q"
+                (click)="onExpandTaskCreationHandler()">
+                <mat-icon>add</mat-icon>
+                <span>Add new task</span>
+              </button>
+            </div>
+          </div>
+
+          <app-create-task
+            [projectId]="selectedProjectId"
+            *ngIf="animationState === 'final'"
+            (addTaskHandler)="onAddTaskHandler($event)"
+            (expandTaskCreationHandler)="onExpandTaskCreationHandler()"
+            [currentState]="animationState"
+          ></app-create-task>
+        </div>
       </div>
 
-      <div class="current-tasks" [@fadeInOut]>
-        <mat-selection-list
-          [(ngModel)]="selectedOptions"
-          *ngIf="currentTasks.length !== 0"
-        >
-          <mat-list-option
-            [@fadeInOut]
-            *ngFor="let task of currentTasks"
-            [value]="task"
-            class="ct-wrapper">
-            <div class="current-tasks__item" [@fadeInOut]>
-              <div class="current-tasks__item">
-                <mat-checkbox
-                  matTooltip="Click to mark as completed"
-                  (click)="markAsCompletedHandler(task)"
-                  class="custom-frame">
-                </mat-checkbox>
-                <span style="margin-left: 1rem;">{{task.task.name}} </span>
+      <div class="past-tasks-wrapper" *ngIf="tasksDone.length !== 0">
+        <h4 class="title__past-tasks mt-3">
+          <mat-icon class="last-completed-tasks" color="accent">gesture</mat-icon>
+          Last completed tasks
+        </h4>
+        <mat-divider></mat-divider>
+
+        <div class="past-tasks" *ngIf="tasksDone">
+          <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let task of tasksDone;" class="fade-in">
+              <div class="past-tasks__item">
+                <mat-icon class="past-tasks__item--right-icon">done</mat-icon>
+                <span [matTooltip]="task.description || 'No description'"
+                      matTooltipPosition='above'>{{task.name}}</span>
+                <div
+                  class="past-tasks__item--options"
+                  [matTooltip]="task.updatedAt"
+                  matTooltipPosition='above'>
+                  <mat-icon>access_time</mat-icon>
+                  {{ task.updatedAt | date }}
+                  <!--            :-->
+                  <!--            {{ task.updatedAt.toDateString() == todaysDate.toDateString()-->
+                  <!--              ? '\'Today\', h:/mm a' : 'MMM d, y, h:mm a' }}-->
+                </div>
               </div>
               <mat-divider></mat-divider>
-              <div class="current-tasks__item__options">
-                <button class="edit-button" (click)="updateTask(task)" mat-icon-button matTooltip="Edit task">
-                  <mat-icon>edit</mat-icon>
-                </button>
-                <span
-                  matTooltip="Assigned to"
-                  matTooltipPosition='above'
-                >
-                  {{ task.user.fullName }}
-                </span>
-              </div>
-            </div>
-          </mat-list-option>
-        </mat-selection-list>
-        <div class="new-task" *ngIf="animationState === 'initial'">
-          <div class="container fade-in">
-            <button
-              class="new-task__add-button fade-in"
-              mat-button
-              matTooltip="Shift + Q"
-              (click)="onExpandTaskCreationHandler()">
-              <mat-icon>add</mat-icon>
-              <span>Add new task</span>
-            </button>
-          </div>
+            </mat-list-item>
+          </mat-list>
         </div>
-
-        <app-create-task
-          [projectId]="selectedProjectId"
-          *ngIf="animationState === 'final'"
-          (addTaskHandler)="onAddTaskHandler($event)"
-          (expandTaskCreationHandler)="onExpandTaskCreationHandler()"
-          [currentState]="animationState"
-        ></app-create-task>
-      </div>
-    </div>
-
-    <div class="past-tasks-wrapper">
-      <h4 class="title__past-tasks mt-3">
-        <mat-icon class="last-completed-tasks" color="accent">gesture</mat-icon>
-        Last completed tasks
-      </h4>
-      <mat-divider></mat-divider>
-
-      <div class="no-past-tasks mt-3 fade-in" *ngIf="tasksDone.length === 0">
-        <img
-          height="80"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Google_Material_Design_check.svg/1200px-Google_Material_Design_check.svg.png"
-          alt="">
-        You've got no tasks done. Start completing one!
-      </div>
-
-      <div class="past-tasks" *ngIf="tasksDone">
-        <mat-list role="list">
-          <mat-list-item role="listitem" *ngFor="let task of tasksDone;" class="fade-in">
-            <div class="past-tasks__item">
-              <mat-icon class="past-tasks__item--right-icon">done</mat-icon>
-              <span [matTooltip]="task.description || 'No description'"
-                    matTooltipPosition='above'>{{task.name}}</span>
-              <div
-                class="past-tasks__item--options"
-                [matTooltip]="task.updatedAt"
-                matTooltipPosition='above'>
-                <mat-icon>access_time</mat-icon>
-                {{ task.updatedAt | date }}
-                <!--            :-->
-                <!--            {{ task.updatedAt.toDateString() == todaysDate.toDateString()-->
-                <!--              ? '\'Today\', h:/mm a' : 'MMM d, y, h:mm a' }}-->
-              </div>
-            </div>
-            <mat-divider></mat-divider>
-          </mat-list-item>
-        </mat-list>
       </div>
     </div>
   </div>
-</div>

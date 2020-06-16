@@ -1,9 +1,13 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { AuthService } from '../../../modules/auth/auth.service';
 import { Router } from '@angular/router';
-import { MatDialog, MatSlideToggleChange } from '@angular/material';
+import { MatDialog, MatMenuTrigger, MatSlideToggleChange } from '@angular/material';
 import { ColorSchemeService } from '../../../modules/settings/color-scheme.service';
 import { QuickTodoDialogComponent } from '../../../modules/todos/quick-todo-dialog/quick-todo-dialog.component';
+import { Subscription } from 'rxjs';
+import { NotificationModel } from '../../../models/notification.model';
+import { NotificationService } from '../../../modules/notifications/notification.service';
+import { IP, PORT } from '../../../constants';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +18,11 @@ export class HeaderComponent implements OnInit {
   @Output() sidenavToggle = new EventEmitter<void>();
   @Input('isButtonDisplayed') isButtonDisplayed: boolean;
   @ViewChild('toggleElement', { static: true }) ref: ElementRef;
+  @ViewChild('menuTrigger', { static: true }) matMenuTrigger: MatMenuTrigger;
+  @ViewChild('notificationMenuMenuTrigger', { static: true }) notificationMenuMenuTrigger: MatMenuTrigger;
+  notificationSubscription: Subscription;
+  notifications: Array<NotificationModel> = [];
+  notificationUnreadCounter = 0;
 
   checked = false;
 
@@ -31,12 +40,25 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService,
               private router: Router,
               private colorSchemeService: ColorSchemeService,
-              private dialog: MatDialog) {
+              private dialog: MatDialog,
+              private notificationService: NotificationService) {
   }
 
   ngOnInit() {
     this.colorSchemeService.load();
     this.checked = this.colorSchemeService.currentActive() === 'dark';
+    setTimeout(() => this.notificationService.fetchAllNotifications(), 1500);
+    this.notificationSubscription = this.notificationService.notificationsChanged
+      .subscribe(notifications => {
+        this.notificationUnreadCounter = 0;
+        this.notifications = notifications.map(notification => {
+          if (notification.status === 'UNREAD') {
+            this.notificationUnreadCounter++;
+          }
+          notification.avatarUrl = `${ IP }${ PORT }/images/${ notification.authorUsername }`;
+          return notification;
+        });
+      });
   }
 
   toggleSideBar() {
@@ -69,5 +91,13 @@ export class HeaderComponent implements OnInit {
     this.dialog.open(QuickTodoDialogComponent, {
       width: '300px'
     });
+  }
+
+  openAuraMenu() {
+    this.matMenuTrigger.openMenu();
+  }
+
+  openNotificationMenu() {
+    this.notificationMenuMenuTrigger.openMenu();
   }
 }

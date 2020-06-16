@@ -13,6 +13,9 @@ import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.comp
 import { ProjectService } from '../project.service';
 import { ColorPickerComponent } from '../color-picker/color-picker.component';
 import { EditTaskDialogComponent } from '../../helpers/edit-task-dialog/edit-task-dialog.component';
+import { ProjectAlertsService } from '../projectAlerts.service';
+import { IP, PORT } from '../../../constants';
+import { ProjectTaskModel } from '../../../models/projectTask.model';
 
 @Component({
   selector: 'app-project',
@@ -22,7 +25,7 @@ import { EditTaskDialogComponent } from '../../helpers/edit-task-dialog/edit-tas
 })
 export class ProjectComponent implements OnInit, OnDestroy {
   selectedProjectId: number = (this.activeRoute.params as any).value.id;
-  currentTasks: any = [];
+  currentTasks: Array<ProjectTaskModel> = [];
   tasksDone: Array<TaskModel> = [];
   animationState = 'initial';
   selectedOptions = [];
@@ -34,6 +37,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   isLoading = true;
   editMode = false;
   topLoaderEnabled = false;
+  isNotificationSectionEnabled = false;
 
   constructor(private snackBar: MatSnackBar,
               private dialog: MatDialog,
@@ -41,7 +45,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
               private projectTaskService: ProjectTaskService,
               private projectService: ProjectService,
               private router: Router,
-              private activeRoute: ActivatedRoute) {
+              private activeRoute: ActivatedRoute,
+              private projectAlertsService: ProjectAlertsService) {
     this.title.setTitle(`Daily Monitoring | Project`);
   }
 
@@ -61,9 +66,12 @@ export class ProjectComponent implements OnInit, OnDestroy {
         this.title.setTitle(`Daily Monitoring | ${ name }`);
       });
     this.currentTaskSubscription = this.projectTaskService.currentTaskChanged
-      .subscribe((tasks: Array<any>) => {
+      .subscribe((tasks: Array<ProjectTaskModel>) => {
         this.topLoaderEnabled = false;
-        this.currentTasks = tasks;
+        this.currentTasks = tasks.map(task => {
+          task.user.url = `${ IP }${ PORT }/images/${ task.user.username }`;
+          return task;
+        });
       });
 
     this.doneTasksSubscription = this.projectTaskService.pastTasksChanged
@@ -95,6 +103,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
       this.selectedProjectId = routeParams.id;
       this.doRequests();
       this.projectService.getCurrentProjectName(routeParams.id);
+      this.projectAlertsService.fetchAllAlerts(this.selectedProjectId);
     });
     this.doRequests();
   }
@@ -103,6 +112,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
     this.currentTaskSubscription.unsubscribe();
     this.doneTasksSubscription.unsubscribe();
   }
+
+  toggleNotificationSection = ($event) => this.isNotificationSectionEnabled = !this.isNotificationSectionEnabled;
 
   changeState() {
     this.animationState = this.animationState === 'initial' ? 'final' : 'initial';

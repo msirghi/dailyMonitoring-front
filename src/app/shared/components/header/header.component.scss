@@ -58,6 +58,14 @@ mat-toolbar {
   margin-right: 1rem;
 }
 
+.notification-menu {
+  width: 30rem;
+}
+
+::ng-deep.mat-menu-panel {
+  max-width: none !important;
+}
+
 .menu-wrapper {
   width: 20rem;
 }

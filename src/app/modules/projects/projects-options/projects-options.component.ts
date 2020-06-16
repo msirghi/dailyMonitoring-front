@@ -11,6 +11,7 @@ export class ProjectsOptionsComponent implements OnInit {
   @Output() togglePie = new EventEmitter<void>();
   @Output() toggleCollaborators = new EventEmitter();
   @Output() toggleSettings = new EventEmitter();
+  @Output() toggleNotifications = new EventEmitter();
 
   constructor() {
   }
@@ -28,6 +29,10 @@ export class ProjectsOptionsComponent implements OnInit {
 
   toggleSettingsDialog(event) {
     this.toggleSettings.emit(event);
+  }
+
+  toggleNotificationSection($event) {
+    this.toggleNotifications.emit($event);
   }
 
 }

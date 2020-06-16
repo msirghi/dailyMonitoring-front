@@ -19,7 +19,8 @@ export class ProjectAlertsService {
       .subscribe(alerts => {
         this.currentAlerts = alerts;
         this.alertsChanged.next(alerts);
-      });
+      },
+      () => this.alertsChanged.next([]));
   }
 
   addAlert(projectId: number, newAlert: ProjectAlertModel) {
