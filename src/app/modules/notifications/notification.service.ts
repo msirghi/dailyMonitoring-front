@@ -25,7 +25,12 @@ export class NotificationService {
   markNotificationAsRead(notificationId: number) {
     this.http.patch(`${ IP }${ PORT }/users/${ this.authService.getUserId() }/notifications/${ notificationId }`, {}, JSON_HEADER)
       .subscribe(() => {
-        this.notifications = this.notifications.filter(val => val.id !== notificationId);
+        this.notifications = this.notifications.map(val => {
+          if (val.id === notificationId) {
+            val.status = 'READ';
+          }
+          return val;
+        });
         this.notificationsChanged.next([...this.notifications]);
       });
   }
@@ -33,8 +38,9 @@ export class NotificationService {
   markNotificationAsReadByList(notificationIdList: Array<number>) {
     this.http.patch(`${ IP }${ PORT }/users/${ this.authService.getUserId() }/notifications`, { notificationIdList }, JSON_HEADER)
       .subscribe(() => {
-        notificationIdList.forEach(val => {
-          this.notifications = this.notifications.filter(notification => notification.id !== val);
+        this.notifications = this.notifications.map(val => {
+          val.status = 'READ';
+          return val;
         });
         this.notificationsChanged.next([...this.notifications]);
       });

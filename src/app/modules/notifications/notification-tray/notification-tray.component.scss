@@ -6,8 +6,9 @@
 
 .wrapper {
   font-size: 1.6rem;
-  width: 20rem;
-  padding: 1rem;
+  //width: 20rem;
+  //padding: 1rem;
+  color: #495057;
 }
 
 .spinner-wrapper {
@@ -15,4 +16,82 @@
   padding: 1rem;
   @include align-center;
   height: 20rem;
+}
+
+.notification-item {
+  display: flex;
+  align-items: end;
+  padding: 1.5rem 1.5rem .5rem;
+
+  &:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+  }
+}
+
+.author, .date {
+  margin-left: .5rem;
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 22rem;
+}
+
+.date {
+  font-size: 1.4rem;
+  margin-top: .5rem;
+  display: flex;
+
+  & .action-icon {
+    margin-left: auto;
+
+    & mat-icon {
+      font-size: 1.4rem;
+      margin-top: .3rem
+    }
+  }
+}
+
+.author {
+  font-weight: 600;
+}
+
+.title-wrapper {
+  padding: 1rem;
+  display: flex;
+}
+
+.mark-all {
+  margin-left: auto;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.no-notifications {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inbox-empty-title {
+  margin-top: 1rem;
+}
+
+.help {
+  margin-top: 1rem;
 }

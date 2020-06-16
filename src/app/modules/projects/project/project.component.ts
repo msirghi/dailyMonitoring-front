@@ -25,7 +25,7 @@ import { ProjectTaskModel } from '../../../models/projectTask.model';
 })
 export class ProjectComponent implements OnInit, OnDestroy {
   selectedProjectId: number = (this.activeRoute.params as any).value.id;
-  currentTasks: any = [];
+  currentTasks: Array<ProjectTaskModel> = [];
   tasksDone: Array<TaskModel> = [];
   animationState = 'initial';
   selectedOptions = [];
@@ -37,6 +37,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   isLoading = true;
   editMode = false;
   topLoaderEnabled = false;
+  isNotificationSectionEnabled = false;
 
   constructor(private snackBar: MatSnackBar,
               private dialog: MatDialog,
@@ -111,6 +112,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
     this.currentTaskSubscription.unsubscribe();
     this.doneTasksSubscription.unsubscribe();
   }
+
+  toggleNotificationSection = ($event) => this.isNotificationSectionEnabled = !this.isNotificationSectionEnabled;
 
   changeState() {
     this.animationState = this.animationState === 'initial' ? 'final' : 'initial';

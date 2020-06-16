@@ -18,7 +18,6 @@ export class ProjectAlertComponent implements OnInit, OnDestroy {
   @Input() projectId: number;
 
   projectAlerts: Array<ProjectAlertModel> = [];
-  animationState = 'initial';
   subscription: Subscription;
 
   constructor(private dialog: MatDialog,
@@ -57,9 +56,6 @@ export class ProjectAlertComponent implements OnInit, OnDestroy {
       }
     });
   }
-
-  changeAnimationState = () =>
-    this.animationState = this.animationState === 'initial' ? 'final' : 'initial';
 
   onUpdate(alert: ProjectAlertModel) {
     const dialogRef = this.dialog.open(ProjectAlertCreationComponent, {

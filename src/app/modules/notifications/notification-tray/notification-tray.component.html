@@ -3,4 +3,40 @@
 </div>
 
 <div class="wrapper" (click)="$event.stopPropagation()" *ngIf="!isLoading">
+  <div class="title-wrapper">
+    <span class="title">Notifications</span>
+    <span *ngIf="notifications.length" class="mark-all" (click)="markAllAsRead()">Mark all as read</span>
+  </div>
+  <div *ngIf="notifications.length">
+    <div class="notification-item" *ngFor="let notification of notifications">
+      <img class="avatar" [src]="notification.avatarUrl" height="40" alt="author">
+      <div class="notification-content">
+        <div>
+          <span class="author">{{notification.authorName}}: </span>
+          <span>{{notification.message}}</span>
+        </div>
+        <div class="date">
+          <span>{{notification.date | date}}</span>
+          <span class="action-icon">
+          <mat-icon
+            *ngIf="notification.status === 'UNREAD'"
+            matTooltip="Mark as read"
+            (click)="markAsRead(notification)">panorama_fish_eye</mat-icon>
+          <mat-icon *ngIf="notification.status === 'READ'" matTooltip="Notification read">lens</mat-icon>
+        </span>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!notifications.length" class="no-notifications">
+    <img height="75" src="assets/icons/039-newspaper.png" alt="no-notifications"/>
+    <span class="inbox-empty-title">Inbox is empty.</span>
+
+    <button mat-button class="help">
+      <mat-icon color="primary">help</mat-icon>
+      <span>What are notifications?</span>
+    </button>
+  </div>
 </div>

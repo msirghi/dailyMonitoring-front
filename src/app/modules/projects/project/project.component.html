@@ -1,28 +1,22 @@
 <app-top-loader *ngIf="topLoaderEnabled"></app-top-loader>
 
-<div class="fade-in" style="padding: 20px">
-  <div class="title__your-tasks">
-    <h3>{{ projectName }}</h3>
+<app-project-header [projectName]="projectName">
+  <app-projects-options
+    [@fadeIn]
+    (toggleCollaborators)="openDetailsDialog($event)"
+    (togglePie)="toggleStatistics()"
+    (toggleSettings)="openSettingsDialog($event)"
+    (toggleNotifications)="toggleNotificationSection($event)"
+    [areStatisticsShown]="areStatisticsShown">
+  </app-projects-options>
+</app-project-header>
 
-    <div class="title-options">
-      <app-projects-options
-        [@fadeIn]
-        (toggleCollaborators)="openDetailsDialog($event)"
-        (togglePie)="toggleStatistics()"
-        (toggleSettings)="openSettingsDialog($event)"
-        [areStatisticsShown]="areStatisticsShown">
-      </app-projects-options>
+<div class="fade-in" style="padding: 15px">
+    <div *ngIf="isNotificationSectionEnabled">
+      <app-project-alert
+        [projectId]="selectedProjectId"
+      ></app-project-alert>
     </div>
-
-  </div>
-
-  <mat-divider></mat-divider>
-
-  <div>
-    <app-project-alert
-      [projectId]="selectedProjectId"
-    ></app-project-alert>
-  </div>
 
   <div [style.display]="areStatisticsShown ? 'block' : 'none'">
     <app-projects-charts
@@ -31,24 +25,13 @@
     </app-projects-charts>
   </div>
 
-  <div *ngIf="!areStatisticsShown">
-    <div class="">
-      <div class="progress-bar">
-        <!--        <h4>Today's goal: <span>4</span> out of 5 tasks done</h4>-->
-        <!--        <mat-progress-bar mode="determinate" value="80"></mat-progress-bar>-->
-        <!--      </div>-->
-        <!---->
-        <!--      <div class="progress-bar">-->
-        <!--        <h4>Weekly goal: <span>20</span> out of 35 tasks done</h4>-->
-        <!--        <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>-->
-        <!--      </div>-->
-      </div>
-
+  <div *ngIf="!areStatisticsShown && !isNotificationSectionEnabled">
+    <div>
       <div class="current-tasks-wrapper">
         <h4 class="title__current-tasks">
           <mat-icon color="accent">scatter_plot</mat-icon>
-          <span *ngIf="currentTasks.length !== 0"> You have {{ currentTasks.length }} task(s) </span>
-          <span *ngIf="currentTasks.length === 0"> Your current tasks </span>
+          <span *ngIf="currentTasks.length !== 0"> {{ currentTasks.length }} task(s) </span>
+          <span *ngIf="currentTasks.length === 0"> Current tasks</span>
         </h4>
         <mat-divider></mat-divider>
 
@@ -117,20 +100,12 @@
         </div>
       </div>
 
-      <div class="past-tasks-wrapper">
+      <div class="past-tasks-wrapper" *ngIf="tasksDone.length !== 0">
         <h4 class="title__past-tasks mt-3">
           <mat-icon class="last-completed-tasks" color="accent">gesture</mat-icon>
           Last completed tasks
         </h4>
         <mat-divider></mat-divider>
-
-        <div class="no-past-tasks mt-3 fade-in" *ngIf="tasksDone.length === 0">
-          <img
-            height="80"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Google_Material_Design_check.svg/1200px-Google_Material_Design_check.svg.png"
-            alt="">
-          You've got no tasks done. Start completing one!
-        </div>
 
         <div class="past-tasks" *ngIf="tasksDone">
           <mat-list role="list">

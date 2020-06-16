@@ -1,26 +1,12 @@
 <div class="alerts-wrapper">
 
-  <span *ngIf="projectAlerts.length === 0" class="no-alerts">No alerts for this project.</span>
-  <div [class]="'alert ' + projectAlerts[0].type" *ngIf="projectAlerts.length > 0">
-    <strong>{{projectAlerts[0].authorName}}: &nbsp;</strong> {{projectAlerts[0].message}}
-    <span class="date">{{projectAlerts[0].date}}
-      <mat-icon matTooltip="Expiration date">today</mat-icon>
-      <mat-icon class="edit-btn" matTooltip="Edit" (click)="onUpdate(projectAlerts[0])">edit</mat-icon>
-      <mat-icon class="close-btn" matTooltip="Remove" (click)="onDelete(projectAlerts[0].id)">close</mat-icon>
-    </span>
-  </div>
+  <h3>Notifications</h3>
+  <mat-divider></mat-divider>
 
-  <div [class]="'alert ' + projectAlerts[1].type" *ngIf="projectAlerts.length > 1">
-    <strong>{{projectAlerts[1].authorName}}: &nbsp;</strong> {{projectAlerts[1].message}}
-    <span class="date">{{projectAlerts[1].date}}
-      <mat-icon matTooltip="Expiration date">today</mat-icon>
-      <mat-icon class="edit-btn" matTooltip="Edit" (click)="onUpdate(projectAlerts[1])">edit</mat-icon>
-      <mat-icon class="close-btn" matTooltip="Remove" (click)="onDelete(projectAlerts[1].id)">close</mat-icon>
-    </span>
-  </div>
+  <span *ngIf="projectAlerts.length === 0" class="no-alerts">No notifications for this project. Maybe it is time to add one?</span>
 
-  <div *ngIf="projectAlerts.length > 1" [@changeDivSize]="animationState">
-    <div [class]="'alert ' + alert.type" *ngFor="let alert of projectAlerts | slice: 2">
+  <div>
+    <div [class]="'alert ' + alert.type" *ngFor="let alert of projectAlerts">
       <strong>{{alert.authorName}}: &nbsp;</strong> {{alert.message}}
       <span class="date">{{alert.date}}
         <mat-icon matTooltip="Expiration date">today</mat-icon>
@@ -31,15 +17,9 @@
   </div>
 
   <div class="inline-buttons">
-    <button mat-icon-button color="primary" (click)="onCreate()">
+    <button mat-raised-button (click)="onCreate()">
       <mat-icon>add</mat-icon>
-    </button>
-    <button mat-icon-button color="primary" (click)="changeAnimationState()" [disabled]="projectAlerts.length <= 2">
-      <mat-icon *ngIf="animationState === 'initial'; else expandLess">expand_more</mat-icon>
+      <span>Add new</span>
     </button>
   </div>
-
-  <ng-template #expandLess>
-    <mat-icon>expand_less</mat-icon>
-  </ng-template>
 </div>

@@ -7,6 +7,7 @@ import { QuickTodoDialogComponent } from '../../../modules/todos/quick-todo-dial
 import { Subscription } from 'rxjs';
 import { NotificationModel } from '../../../models/notification.model';
 import { NotificationService } from '../../../modules/notifications/notification.service';
+import { IP, PORT } from '../../../constants';
 
 @Component({
   selector: 'app-header',
@@ -21,6 +22,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('notificationMenuMenuTrigger', { static: true }) notificationMenuMenuTrigger: MatMenuTrigger;
   notificationSubscription: Subscription;
   notifications: Array<NotificationModel> = [];
+  notificationUnreadCounter = 0;
 
   checked = false;
 
@@ -48,8 +50,14 @@ export class HeaderComponent implements OnInit {
     setTimeout(() => this.notificationService.fetchAllNotifications(), 1500);
     this.notificationSubscription = this.notificationService.notificationsChanged
       .subscribe(notifications => {
-        console.log(notifications);
-        this.notifications = notifications;
+        this.notificationUnreadCounter = 0;
+        this.notifications = notifications.map(notification => {
+          if (notification.status === 'UNREAD') {
+            this.notificationUnreadCounter++;
+          }
+          notification.avatarUrl = `${ IP }${ PORT }/images/${ notification.authorUsername }`;
+          return notification;
+        });
       });
   }
 

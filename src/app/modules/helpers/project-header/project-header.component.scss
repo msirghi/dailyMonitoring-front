@@ -1,0 +1,27 @@
+.wrapper {
+  background: linear-gradient(18deg, rgba(139, 112, 235, .52) 39%, rgba(59, 152, 250, .52) 100%),
+  url("https://images.wallpaperscraft.com/image/background_drops_light_circles_blue_83428_1680x1050.jpg");
+}
+
+.project-title {
+  display: flex;
+  height: 100px;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: #fff;
+
+  & .project-name {
+    font-size: 3rem;
+    margin-left: 2rem;
+  }
+
+  & .date {
+    margin-left: 2rem;
+  }
+}
+
+.options {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}

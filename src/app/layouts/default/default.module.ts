@@ -53,6 +53,7 @@ import { AuraMenuComponent } from 'src/app/modules/aura/aura-menu/aura-menu.comp
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ImageCropperComponent } from '../../modules/helpers/image-cropper/image-cropper.component';
 import { NotificationTrayComponent } from '../../modules/notifications/notification-tray/notification-tray.component';
+import { ProjectHeaderComponent } from '../../modules/helpers/project-header/project-header.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { NotificationTrayComponent } from '../../modules/notifications/notificat
     ConfirmationDialogComponent,
     QuickTodoDialogComponent,
     ImageCropperComponent,
+    ProjectHeaderComponent
   ],
   imports: [
     CommonModule,

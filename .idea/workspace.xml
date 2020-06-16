@@ -19,25 +19,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f8b05a1-0e1b-4680-b720-587e58e6d0a4" name="Default Changelist" comment="[Add]: image cropper &amp; assigned to image">
-      <change afterPath="$PROJECT_DIR$/src/app/models/notification.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/modules/notifications/notification.service.ts" afterDir="false" />
+    <list default="true" id="3f8b05a1-0e1b-4680-b720-587e58e6d0a4" name="Default Changelist" comment="[Add]: notifications">
+      <change afterPath="$PROJECT_DIR$/src/app/modules/helpers/project-header/project-header.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modules/helpers/project-header/project-header.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modules/helpers/project-header/project-header.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modules/helpers/project-header/project-header.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/039-newspaper.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layouts/default/default.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/default/default.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layouts/default/default.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/default/default.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/models/projectTask.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/projectTask.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/helpers/image-cropper/image-cropper.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/helpers/image-cropper/image-cropper.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/notification.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/notification.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/notifications/notification-tray/notification-tray.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/notifications/notification.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/notifications/notification.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project-alert/project-alert.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project/project.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project/project.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project/project.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project/project.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/modules/projects/project/project.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/project/project.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/projectTask.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/projectTask.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/modules/settings/account/account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/settings/account/account.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/projects-options/projects-options.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/projects-options/projects-options.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/projects-options/projects-options.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/projects-options/projects-options.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/projects/projects-options/projects-options.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/projects/projects-options/projects-options.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shared/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/components/header/header.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/header/header.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shared/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/components/sidebar/sidebar.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/sidebar/sidebar.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +72,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../react-native-demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../sense-it/senseitNative" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -72,6 +82,9 @@
     <property name="ts.external.directory.path" value="C:\Users\user\Desktop\projects\dm\dailyMonitoring-front\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\projects\dm\dailyMonitoring-front\src\assets\icons" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\projects\dm\dailyMonitoring-front\src\app\modules\auth\register" />
       <recent name="C:\Users\user\Desktop\projects\dm\dailyMonitoring-front\src\app\modules\auth" />
@@ -224,7 +237,10 @@
       <workItem from="1591684917353" duration="1405000" />
       <workItem from="1591686338534" duration="15597000" />
       <workItem from="1591731690985" duration="2009000" />
-      <workItem from="1591777535963" duration="19206000" />
+      <workItem from="1591777535963" duration="19445000" />
+      <workItem from="1591861536051" duration="6939000" />
+      <workItem from="1591870477744" duration="434000" />
+      <workItem from="1592332497069" duration="8420000" />
     </task>
     <task id="LOCAL-00001" summary="[Add]: add/delete project components">
       <created>1589808813675</created>
@@ -352,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591799424763</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="[Add]: notifications">
+      <created>1591818737503</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1591818737503</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +412,8 @@
     <MESSAGE value="[Add]: new icons &amp; aura module refactor" />
     <MESSAGE value="[Add]: image upload &amp; update" />
     <MESSAGE value="[Add]: image cropper &amp; assigned to image" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Add]: image cropper &amp; assigned to image" />
+    <MESSAGE value="[Add]: notifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Add]: notifications" />
   </component>
   <component name="WindowStateProjectService">
     <state x="482" y="130" width="1063" height="713" key="#Vim_Emulation" timestamp="1591340692873">
@@ -410,50 +434,50 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="653" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590488408977" />
-    <state x="711" y="276" key="FileChooserDialogImpl" timestamp="1591547255043">
+    <state x="711" y="276" key="FileChooserDialogImpl" timestamp="1591870909781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="711" y="276" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591547255043" />
+    <state x="711" y="276" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591870909781" />
     <state x="711" y="276" key="FileChooserDialogImpl/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1589871630458" />
-    <state width="1691" height="268" key="GridCell.Tab.0.bottom" timestamp="1591795423012">
+    <state width="1691" height="268" key="GridCell.Tab.0.bottom" timestamp="1591818926988">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591795423012" />
+    <state width="1691" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591818926988" />
     <state width="1757" height="269" key="GridCell.Tab.0.bottom/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.0.center" timestamp="1591795423012">
+    <state width="1691" height="268" key="GridCell.Tab.0.center" timestamp="1591818926988">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591795423012" />
+    <state width="1691" height="268" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591818926988" />
     <state width="1757" height="269" key="GridCell.Tab.0.center/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.0.left" timestamp="1591795423012">
+    <state width="1691" height="268" key="GridCell.Tab.0.left" timestamp="1591818926988">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591795423012" />
+    <state width="1691" height="268" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591818926988" />
     <state width="1757" height="269" key="GridCell.Tab.0.left/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.0.right" timestamp="1591795423012">
+    <state width="1691" height="268" key="GridCell.Tab.0.right" timestamp="1591818926988">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591795423012" />
+    <state width="1691" height="268" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591818926988" />
     <state width="1757" height="269" key="GridCell.Tab.0.right/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.1.bottom" timestamp="1591795423013">
+    <state width="1691" height="268" key="GridCell.Tab.1.bottom" timestamp="1591818926988">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591795423013" />
+    <state width="1691" height="268" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591818926988" />
     <state width="1757" height="269" key="GridCell.Tab.1.bottom/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.1.center" timestamp="1591795423012">
+    <state width="1691" height="268" key="GridCell.Tab.1.center" timestamp="1591818926988">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591795423012" />
+    <state width="1691" height="268" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591818926988" />
     <state width="1757" height="269" key="GridCell.Tab.1.center/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.1.left" timestamp="1591795423012">
+    <state width="1691" height="268" key="GridCell.Tab.1.left" timestamp="1591818926988">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591795423012" />
+    <state width="1691" height="268" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591818926988" />
     <state width="1757" height="269" key="GridCell.Tab.1.left/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
-    <state width="1691" height="268" key="GridCell.Tab.1.right" timestamp="1591795423013">
+    <state width="1691" height="268" key="GridCell.Tab.1.right" timestamp="1591818926988">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1691" height="268" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591795423013" />
+    <state width="1691" height="268" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591818926988" />
     <state width="1757" height="269" key="GridCell.Tab.1.right/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590525632070" />
     <state width="1757" height="269" key="GridCell.Tab.4.bottom" timestamp="1590488502248">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -504,10 +528,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="190" y="115" width="1479" height="800" key="dock-window-1/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1589875134281" />
-    <state x="642" y="121" width="585" height="801" key="find.popup" timestamp="1591817856943">
+    <state x="642" y="121" width="585" height="801" key="find.popup" timestamp="1592339812212">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="642" y="121" width="585" height="801" key="find.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591817856943" />
+    <state x="642" y="121" width="585" height="801" key="find.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1592339812212" />
     <state x="642" y="121" width="585" height="801" key="find.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590830126286" />
     <state x="707" y="239" key="git4idea.branch.GitSmartOperationDialog" timestamp="1589790660420">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -518,10 +542,10 @@
     </state>
     <state x="590" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591797559693" />
     <state x="590" y="243" key="run.anything.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590586361510" />
-    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1591817961478">
+    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1592341349492">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1591817961478" />
+    <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1440.870@0.0.1920.1050" timestamp="1592341349492" />
     <state x="597" y="241" width="672" height="678" key="search.everywhere.popup/1920.183.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1590827292313" />
   </component>
 </project>
