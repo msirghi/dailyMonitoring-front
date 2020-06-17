@@ -1,0 +1,18 @@
+<app-top-loader *ngIf="isLoading"></app-top-loader>
+
+<h2 mat-dialog-title>Almost there...</h2>
+<div mat-dialog-content>
+  <span class="title">It seems like you never entered our site. Could you provide your username, please?</span>
+  <div [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input formControlName="username" matInput placeholder="Choose username">
+    </mat-form-field>
+  </div>
+  <span *ngIf="isError" class="error">Username is already taken.</span>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button [mat-dialog-close] color="accent" mat-raised-button> Cancel</button>
+  <button (click)="onSubmit()" color="submit" [disabled]="!form.valid" mat-raised-button> Submit</button>
+</div>
