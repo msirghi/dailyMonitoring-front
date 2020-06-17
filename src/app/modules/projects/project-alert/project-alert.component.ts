@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { ProjectAlertCreationComponent } from '../project-alert-creation/project-alert-creation.component';
 import { ProjectAlertModel } from '../../../models/projectAlert.model';
@@ -16,6 +16,7 @@ import { ConfirmationDialogComponent } from '../../helpers/confirmation-dialog/c
 export class ProjectAlertComponent implements OnInit, OnDestroy {
 
   @Input() projectId: number;
+  @Output() backAction = new EventEmitter<void>();
 
   projectAlerts: Array<ProjectAlertModel> = [];
   subscription: Subscription;

@@ -20,7 +20,8 @@
 }
 
 .info {
-  background-color: #47a8f5;
+  //background-color: #47a8f5;
+  background-color: mediumslateblue;
 }
 
 .danger {
@@ -40,6 +41,10 @@
   margin-top: .5rem;
   display: flex;
   justify-content: flex-end;
+
+  & .back-button {
+    margin-right: 1rem;
+  }
 }
 
 .date {

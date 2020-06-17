@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   notificationSubscription: Subscription;
   notifications: Array<NotificationModel> = [];
   notificationUnreadCounter = 0;
-
+  isNotShown = false;
   checked = false;
 
   public themes = [
@@ -47,6 +47,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.colorSchemeService.load();
     this.checked = this.colorSchemeService.currentActive() === 'dark';
+    this.isNotShown = this.router.url === '/welcome';
     setTimeout(() => this.notificationService.fetchAllNotifications(), 1500);
     this.notificationSubscription = this.notificationService.notificationsChanged
       .subscribe(notifications => {
@@ -94,10 +95,14 @@ export class HeaderComponent implements OnInit {
   }
 
   openAuraMenu() {
-    this.matMenuTrigger.openMenu();
+    if (this.matMenuTrigger) {
+      this.matMenuTrigger.openMenu();
+    }
   }
 
   openNotificationMenu() {
-    this.notificationMenuMenuTrigger.openMenu();
+    if (this.notificationMenuMenuTrigger) {
+      this.notificationMenuMenuTrigger.openMenu();
+    }
   }
 }

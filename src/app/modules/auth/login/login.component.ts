@@ -61,4 +61,12 @@ export class LoginComponent implements OnInit {
       () => this.isLoading = false);
   }
 
+  login() {
+
+  }
+
+  logout() {
+
+  }
+
 }

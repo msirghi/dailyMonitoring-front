@@ -2,6 +2,7 @@ import 'intersection-observer';
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {Renderer2} from '@angular/core';
 import {QuotesService} from '../quotes.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-welcome',
@@ -13,8 +14,11 @@ export class WelcomeComponent implements OnInit {
   private selectedQuote: { quote: string, author: string };
   private loading = true;
   private opacityChangeIntensity = 1000;
+  isLogged = false;
 
-  constructor(private renderer: Renderer2, private quoteService: QuotesService) {
+  constructor(private renderer: Renderer2,
+              private quoteService: QuotesService,
+              private authService: AuthService) {
   }
 
   selectQuote(quote: string, author: string) {
@@ -35,6 +39,7 @@ export class WelcomeComponent implements OnInit {
     //   .getQuotes()
     //   .subscribe((quotes: Array<{ text: string, author: string }>) => this.getRandomQuote(quotes));
     setTimeout(() => this.loading = false, 1000);
+    this.isLogged = !!this.authService.isAuthenticated();
   }
 
   public onIntersectionAnimateLeft({target, visible}: { target: Element; visible: boolean }): void {

@@ -12,11 +12,12 @@
 </app-project-header>
 
 <div class="fade-in" style="padding: 15px">
-    <div *ngIf="isNotificationSectionEnabled">
-      <app-project-alert
-        [projectId]="selectedProjectId"
-      ></app-project-alert>
-    </div>
+  <div *ngIf="isNotificationSectionEnabled">
+    <app-project-alert
+      (backAction)="toggleNotificationSection()"
+      [projectId]="selectedProjectId"
+    ></app-project-alert>
+  </div>
 
   <div [style.display]="areStatisticsShown ? 'block' : 'none'">
     <app-projects-charts
@@ -112,17 +113,13 @@
             <mat-list-item role="listitem" *ngFor="let task of tasksDone;" class="fade-in">
               <div class="past-tasks__item">
                 <mat-icon class="past-tasks__item--right-icon">done</mat-icon>
-                <span [matTooltip]="task.description || 'No description'"
-                      matTooltipPosition='above'>{{task.name}}</span>
+                <span>{{task.name}}</span>
                 <div
                   class="past-tasks__item--options"
                   [matTooltip]="task.updatedAt"
                   matTooltipPosition='above'>
                   <mat-icon>access_time</mat-icon>
                   {{ task.updatedAt | date }}
-                  <!--            :-->
-                  <!--            {{ task.updatedAt.toDateString() == todaysDate.toDateString()-->
-                  <!--              ? '\'Today\', h:/mm a' : 'MMM d, y, h:mm a' }}-->
                 </div>
               </div>
               <mat-divider></mat-divider>

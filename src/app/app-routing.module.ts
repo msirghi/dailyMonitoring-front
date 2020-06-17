@@ -34,10 +34,10 @@ const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
       },
-      {
-        path: 'projects',
-        component: ProjectsMainComponent,
-      },
+      // {
+      //   path: 'projects',
+      //   component: ProjectsMainComponent,
+      // },
       {
         path: 'project/:id',
         component: ProjectComponent

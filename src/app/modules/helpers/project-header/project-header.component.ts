@@ -16,7 +16,7 @@ export class ProjectHeaderComponent implements OnInit {
 
   ngOnInit() {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    this.date = `${ days[new Date().getDay()] }, ${ this.months[new Date().getMonth()] } ${ new Date().getDay() }`;
+    this.date = `${ days[new Date().getDay()] }, ${ this.months[new Date().getMonth()] } ${ new Date().getDate() }`;
   }
 
 }

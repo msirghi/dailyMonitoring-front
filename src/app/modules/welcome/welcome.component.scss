@@ -147,6 +147,24 @@ h1 {
   }
 }
 
+.project-section {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;;
+  align-items: center;
+  padding-bottom: 1rem;
+
+  & .project-title {
+    font-size: 3rem;
+  }
+
+  & img {
+    width: 75%;
+    border-radius: 20px;
+    //box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+  }
+}
+
 .footer {
   &-wrapper {
     background-color: #3f51b5;
@@ -375,6 +393,10 @@ h1 {
   .mobile-images {
     display: block;
     width: 100%;
+  }
+
+  .project-section img {
+    display: none;
   }
 }
 
