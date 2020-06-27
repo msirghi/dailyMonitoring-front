@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatInput, ThemePalette } from '@angular/material';
 import { ProjectUserService } from '../projectUser.service';
 import { UserInfoModel } from '../../../models/userInfo.model';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-create-task',
@@ -30,7 +31,8 @@ export class CreateTaskComponent implements OnInit, DoCheck {
   newTaskForm: FormGroup;
 
   constructor(private differs: KeyValueDiffers,
-              private projectUserService: ProjectUserService) {
+              private projectUserService: ProjectUserService,
+              private authService: AuthService) {
   }
 
   changeSelectedUser(selectedUser) {
@@ -78,8 +80,15 @@ export class CreateTaskComponent implements OnInit, DoCheck {
   }
 
   onSubmit() {
-    this.addTaskHandler.emit({ ...this.newTaskForm.value, assignedToId: this.selectedUser.id });
-    this.newTaskForm.reset();
+    this.addTaskHandler.emit({
+      ...this.newTaskForm.value,
+      assignedToId: this.selectedUser ? this.selectedUser.id : this.authService.getUserId()
+    });
     this.toggleDescription();
+    this.resetTaskForm();
+  }
+
+  resetTaskForm() {
+    this.newTaskForm.reset();
   }
 }

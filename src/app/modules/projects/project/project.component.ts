@@ -136,6 +136,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   }
 
   onAddTaskHandler(newTask) {
+    console.log('entered');
     this.projectTaskService.addNewProjectTask({
       name: newTask.name,
       categoryId: 1,

@@ -6,6 +6,7 @@ import { Title } from '@angular/platform-browser';
 import { AuthService } from '../auth.service';
 import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { ExternalLoginDialogComponent } from '../external-login-dialog/external-login-dialog.component';
+import { ColorSchemeService } from '../../settings/color-scheme.service';
 
 @Component({
   selector: 'app-login',
@@ -24,14 +25,20 @@ export class LoginComponent implements OnInit {
               private title: Title,
               private router: Router,
               private oAuthService: SocialAuthService,
-              private dialog: MatDialog) {
-    this.title.setTitle('Daily Monitoring | Sign in');
+              private dialog: MatDialog,
+              private colorSchemeService: ColorSchemeService) {
+    this.title.setTitle('Sign in | Daily Monitoring');
     this.route.queryParams
       .subscribe(v => {
         if (Boolean(v.activated)) {
           this.snackBar.open('Account activated', '');
         }
       });
+
+    this.colorSchemeService._setColorScheme({
+      name: 'light',
+      icon: 'wb_sunny'
+    });
   }
 
   ngOnInit() {
@@ -56,7 +63,6 @@ export class LoginComponent implements OnInit {
       (result) => {
         this.router.navigate(['/dashboard']);
         this.authService.setAuthToken(result.body.jwt);
-        // localStorage.setItem('refreshToken', result.body.refreshToken);
       },
       () => {
         this.isLoading = false;

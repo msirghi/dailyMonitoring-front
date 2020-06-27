@@ -12,7 +12,7 @@ $inside-theme-light: mat-light-theme($inside-primary, $inside-accent, $inside-wa
   @include angular-material-theme($inside-theme-dark);
 
   mat-toolbar {
-    background-color: #3d3d3d !important;
+    //background-color: #3d3d3d !important;
   }
 
   .main-logo {
@@ -32,12 +32,15 @@ $inside-theme-light: mat-light-theme($inside-primary, $inside-accent, $inside-wa
   @include angular-material-theme($inside-theme-light);
 
   mat-toolbar {
-    background-color: #3d3d3d !important;;
-    color: #fff !important;
+    //background-color: #3d3d3d !important;;
+    //color: #fff !important;
+    //background-color: #f3f4f6 !important3d3d3d;
+    background-color: #f2f3f1 !important;
+    color: #555555 !important;
   }
 
   mat-drawer {
-    background-color: #eae8eb !important;
+    background-color: #f2f3f1 !important;
   }
 }
 
@@ -61,4 +64,12 @@ body {
 
 .mt-3 {
   margin-top: 3%;
+}
+
+.content {
+  //background: #eee;
+  //border-top-left-radius: 5rem;
+  //border-top-right-radius: 5rem;
+  //height: 100%;
+  padding: 20px 20px 20px 30px;
 }
