@@ -36,7 +36,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   areStatisticsShown = true;
   isLoading = true;
   editMode = false;
-  topLoaderEnabled = false;
+  topLoaderEnabled = true;
   isNotificationSectionEnabled = false;
 
   constructor(private snackBar: MatSnackBar,
@@ -58,12 +58,11 @@ export class ProjectComponent implements OnInit, OnDestroy {
     this.projectTaskService.fetchAllProjectInProgressTasks(this.selectedProjectId);
     this.projectTaskService.fetchLastDoneTasks(this.selectedProjectId);
 
-    // TODO: unsubscribe
     this.projectService.projectNameChanged
       .subscribe(name => {
         this.isLoading = false;
         this.projectName = name;
-        this.title.setTitle(`Daily Monitoring | ${ name }`);
+        this.title.setTitle(`${ name } | Daily Monitoring `);
       });
     this.currentTaskSubscription = this.projectTaskService.currentTaskChanged
       .subscribe((tasks: Array<ProjectTaskModel>) => {
@@ -137,6 +136,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   }
 
   onAddTaskHandler(newTask) {
+    console.log('entered');
     this.projectTaskService.addNewProjectTask({
       name: newTask.name,
       categoryId: 1,

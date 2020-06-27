@@ -16,10 +16,8 @@
       <div class="welcome__quote animate-slide-right">
         <div class="quote-container">
           <blockquote>
-            <!--            <p>{{ selectedQuote.quote }}”</p>-->
             <p>Genius is one percent inspiration and ninety-nine percent perspiration.”</p>
           </blockquote>
-          <!--          <cite><span>{{ selectedQuote.author }}</span><br>-->
           <cite><span>Thomas Edison</span><br>
           </cite>
         </div>
@@ -110,7 +108,15 @@
     </section>
   </div>
 
-  <div class="footer-wrapper">
+  <!--  <div class="project-section">-->
+  <!--    <img src="assets/screens/project%20page.PNG">-->
+
+  <!--    <div class="project-title">-->
+  <!--      <span>Create projects. Simpler than ever.</span>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <div class="footer-wrapper"  *ngIf="!isLogged">
     <div
       class="footer-header"
       inViewport
@@ -128,14 +134,16 @@
       [inViewportOptions]="{ threshold: [0] }"
       (inViewportAction)="onIntersectionAnimateRight($event)"
     >
-      <button routerLink="/login" mat-raised-button color="accent" class="welcome__btns--btn">
-        <mat-icon>account_circle</mat-icon>
-        Sign in
-      </button>
-      <button routerLink="/register" mat-raised-button color="accent" class="welcome__btns--btn">
-        <mat-icon>keyboard_arrow_right</mat-icon>
-        Create new account
-      </button>
+      <div class="welcome__btns">
+        <button routerLink="/login" mat-raised-button color="accent" class="welcome__btns--btn">
+          <mat-icon>account_circle</mat-icon>
+          Sign in
+        </button>
+        <button routerLink="/register" mat-raised-button color="accent" class="welcome__btns--btn">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+          Create new account
+        </button>
+      </div>
     </div>
   </div>
 

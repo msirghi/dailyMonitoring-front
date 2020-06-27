@@ -7,6 +7,7 @@ import { fadeInOutAnimation } from '../../../../animations/fadeInOut.animation';
 import { HttpErrorModel } from '../../../../models/httpError.model';
 import { MailClientModel } from '../../../../models/mailClient.model';
 import { AuthService } from '../../auth.service';
+import { ColorSchemeService } from '../../../settings/color-scheme.service';
 
 @Component({
   selector: 'app-register',
@@ -23,8 +24,13 @@ export class RegisterComponent {
   email: string;
 
   constructor(private authService: AuthService,
-              private title: Title) {
-    this.title.setTitle('Daily Monitoring | Registration');
+              private title: Title,
+              private colorSchemeService: ColorSchemeService) {
+    this.title.setTitle('Registration | Daily Monitoring');
+    this.colorSchemeService._setColorScheme({
+      name: 'light',
+      icon: 'wb_sunny'
+    });
   }
 
   changeState = () => this.animationState = this.animationState === 'initial' ? 'final' : 'initial';

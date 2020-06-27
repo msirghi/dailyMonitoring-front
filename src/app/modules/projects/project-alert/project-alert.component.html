@@ -17,6 +17,10 @@
   </div>
 
   <div class="inline-buttons">
+    <button mat-raised-button (click)="backAction.emit()" class="back-button">
+      <mat-icon>keyboard_backspace</mat-icon>
+      <span>Back</span>
+    </button>
     <button mat-raised-button (click)="onCreate()">
       <mat-icon>add</mat-icon>
       <span>Add new</span>

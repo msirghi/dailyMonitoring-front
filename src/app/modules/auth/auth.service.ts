@@ -15,6 +15,7 @@ export class AuthService {
   authToken = '';
   userId: number;
   fullName: string;
+  authProvider = new Subject();
 
   constructor(private http: HttpClient,
               private router: Router,
@@ -93,5 +94,25 @@ export class AuthService {
 
   registerUser(user: UserModel) {
     return this.http.post(`http://127.0.0.1:8182/users`, user, JSON_HEADER);
+  }
+
+  getUserByExternalId(id: string) {
+    return this.http.get(`${ IP }${ PORT }/users/provider?externalId=${ id }`);
+  }
+
+  createUserWithOtherProvider(user) {
+    return this.http.post(`${ IP }${ PORT }/login`, { ...user });
+  }
+
+  authenticateUserWithOtherProvider(externalId: string, email: string) {
+    this.http.post<{ jwt: string, refreshToken: string }>(`${ IP }${ PORT }/authenticate/provider`, { externalId, email })
+      .subscribe(resData => {
+        this.userId = jwt_decode(resData.jwt).id;
+        this.cookieService.delete('jit');
+        this.cookieService.set('jit', resData.refreshToken);
+        this.setAuthToken(resData.jwt);
+        this.setFullName(jwt_decode(resData.jwt).fullName);
+        this.authProvider.next(resData);
+      });
   }
 }

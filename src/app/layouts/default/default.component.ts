@@ -1,14 +1,14 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../modules/auth/auth.service';
-import { fadeInAnimation } from '../../animations/fadeIn.animation';
 import { CookieService } from 'ngx-cookie-service';
 import * as jwt_decode from 'jwt-decode';
+import { fadeAnimation } from '../../animations/fade.animation';
 
 @Component({
   selector: 'app-default',
   templateUrl: './default.component.html',
   styleUrls: ['./default.component.scss'],
-  animations: [fadeInAnimation]
+  animations: [fadeAnimation]
 })
 export class DefaultComponent implements OnInit {
   @ViewChild('sidenav', { static: true }) sidenav;
@@ -45,5 +45,9 @@ export class DefaultComponent implements OnInit {
     if (this.isShown && this.sidenav && this.sidenav.opened) {
       this.sidenav.close();
     }
+  }
+
+  public getRouterOutletState(outlet) {
+    return outlet.isActivated ? outlet.activatedRoute : '';
   }
 }

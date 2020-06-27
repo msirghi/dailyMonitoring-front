@@ -23,12 +23,15 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ProjectAlertsService } from './modules/projects/projectAlerts.service';
 import { AuraService } from './modules/aura.service';
 import { NotificationService } from './modules/notifications/notification.service';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import { ExternalLoginDialogComponent } from './modules/auth/external-login-dialog/external-login-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    SocialLoginModule,
     BrowserModule,
     RouterModule,
     AppRoutingModule,
@@ -39,6 +42,21 @@ import { NotificationService } from './modules/notifications/notification.servic
     DragDropModule
   ],
   providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '447118791336-nr6tkc4thqsrrs56pjv4uedoqv86a2ke.apps.googleusercontent.com'
+              // '447118791336-9aq3okhmh8gvv6snsjd11t5sccs8i0h8.apps.googleusercontent.com'
+            ),
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    },
     CookieService,
     QuotesService,
     AuthService,

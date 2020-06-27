@@ -1,7 +1,8 @@
 import 'intersection-observer';
-import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
-import {Renderer2} from '@angular/core';
-import {QuotesService} from '../quotes.service';
+import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { QuotesService } from '../quotes.service';
+import { AuthService } from '../auth/auth.service';
+import { ColorSchemeService } from '../settings/color-scheme.service';
 
 @Component({
   selector: 'app-welcome',
@@ -9,16 +10,24 @@ import {QuotesService} from '../quotes.service';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  @ViewChild('welcome', {static: false}) welcomeElement: ElementRef;
+  @ViewChild('welcome', { static: false }) welcomeElement: ElementRef;
   private selectedQuote: { quote: string, author: string };
   private loading = true;
   private opacityChangeIntensity = 1000;
+  isLogged = false;
 
-  constructor(private renderer: Renderer2, private quoteService: QuotesService) {
+  constructor(private renderer: Renderer2,
+              private quoteService: QuotesService,
+              private authService: AuthService,
+              private colorSchemeService: ColorSchemeService) {
+    this.colorSchemeService._setColorScheme({
+      name: 'light',
+      icon: 'wb_sunny'
+    });
   }
 
   selectQuote(quote: string, author: string) {
-    this.selectedQuote = {quote, author};
+    this.selectedQuote = { quote, author };
     this.loading = false;
   }
 
@@ -35,13 +44,14 @@ export class WelcomeComponent implements OnInit {
     //   .getQuotes()
     //   .subscribe((quotes: Array<{ text: string, author: string }>) => this.getRandomQuote(quotes));
     setTimeout(() => this.loading = false, 1000);
+    this.isLogged = !!this.authService.isAuthenticated();
   }
 
-  public onIntersectionAnimateLeft({target, visible}: { target: Element; visible: boolean }): void {
+  public onIntersectionAnimateLeft({ target, visible }: { target: Element; visible: boolean }): void {
     this.renderer.addClass(target, visible ? 'animate-slide-left' : 'inactive');
   }
 
-  public onIntersectionAnimateRight({target, visible}: { target: Element; visible: boolean }): void {
+  public onIntersectionAnimateRight({ target, visible }: { target: Element; visible: boolean }): void {
     this.renderer.addClass(target, visible ? 'animate-slide-right' : 'inactive');
   }
 

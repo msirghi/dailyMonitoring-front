@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { AuthService } from '../auth.service';
+import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+import { ExternalLoginDialogComponent } from '../external-login-dialog/external-login-dialog.component';
+import { ColorSchemeService } from '../../settings/color-scheme.service';
 
 @Component({
   selector: 'app-login',
@@ -20,14 +23,22 @@ export class LoginComponent implements OnInit {
               private snackBar: MatSnackBar,
               private authService: AuthService,
               private title: Title,
-              private router: Router) {
-    this.title.setTitle('Daily Monitoring | Sign in');
+              private router: Router,
+              private oAuthService: SocialAuthService,
+              private dialog: MatDialog,
+              private colorSchemeService: ColorSchemeService) {
+    this.title.setTitle('Sign in | Daily Monitoring');
     this.route.queryParams
       .subscribe(v => {
         if (Boolean(v.activated)) {
           this.snackBar.open('Account activated', '');
         }
       });
+
+    this.colorSchemeService._setColorScheme({
+      name: 'light',
+      icon: 'wb_sunny'
+    });
   }
 
   ngOnInit() {
@@ -52,7 +63,6 @@ export class LoginComponent implements OnInit {
       (result) => {
         this.router.navigate(['/dashboard']);
         this.authService.setAuthToken(result.body.jwt);
-        // localStorage.setItem('refreshToken', result.body.refreshToken);
       },
       () => {
         this.isLoading = false;
@@ -61,4 +71,27 @@ export class LoginComponent implements OnInit {
       () => this.isLoading = false);
   }
 
+  openDialog(res) {
+    this.dialog.open(ExternalLoginDialogComponent, {
+      width: '400px',
+      data: {
+        res
+      }
+    });
+  }
+
+  login() {
+    this.oAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
+      .then(res => {
+        this.authService.getUserByExternalId(res.id)
+          .subscribe(
+            () => {
+              this.authService.authenticateUserWithOtherProvider(res.id, res.email);
+              setTimeout(() => window.location.reload(), 1000);
+            },
+            () => {
+              this.openDialog(res);
+            });
+      });
+  }
 }

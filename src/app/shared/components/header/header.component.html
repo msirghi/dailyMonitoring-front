@@ -6,10 +6,11 @@
       </button>
     </div>
 
-    <div fxFlex fxLayout="row" fxLayoutAlign="flex-start">
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-start center" fxFlexAlign="center">
       <button mat-icon-button (click)="navigateHome()">
         <mat-icon matTooltip="Homepage">home</mat-icon>
       </button>
+      <span>Daily Monitoring</span>
     </div>
 
     <div>
@@ -22,7 +23,8 @@
         <li>
           <button mat-icon-button #notificationMenuMenuTrigger="matMenuTrigger" [matMenuTriggerFor]="notificationMenu"
                   (click)="openNotificationMenu()">
-            <mat-icon *ngIf="notificationUnreadCounter > 0" [matBadge]="notificationUnreadCounter" matBadgeColor="primary">
+            <mat-icon *ngIf="notificationUnreadCounter > 0" [matBadge]="notificationUnreadCounter"
+                      matBadgeColor="primary">
               notifications
             </mat-icon>
             <mat-icon *ngIf="!notificationUnreadCounter">notifications</mat-icon>
@@ -33,7 +35,8 @@
         </li>
         <li matTooltip="Aura">
           <button #menuTrigger="matMenuTrigger" mat-icon-button [matMenuTriggerFor]="auraMenu" (click)="openAuraMenu()">
-            <img height="25" src="assets/icons/self_improvement.svg" alt="aura">
+            <mat-icon>self_improvement</mat-icon>
+<!--            <img height="25" src="assets/icons/self_improvement.svg" alt="aura">-->
           </button>
           <mat-menu class="settings-menu" #auraMenu="matMenu">
             <app-aura-menu *ngIf="matMenuTrigger.menuOpen"></app-aura-menu>

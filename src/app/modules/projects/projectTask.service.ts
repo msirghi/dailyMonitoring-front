@@ -31,9 +31,10 @@ export class ProjectTaskService {
       { ...task, categoryId: 1 },
       JSON_HEADER)
       .toPromise()
-      .then((res: { assignedToName: string }) => {
+      .then((res: { username: string, assignedToName: string }) => {
         this.currentTasks = this.currentTasks.map(val => {
           if (val.task.id === taskId) {
+            val.user.username = res.username;
             val.task = task;
             val.user.fullName = res.assignedToName;
           }

@@ -1,4 +1,3 @@
-<app-header [isButtonDisplayed]="!isShown" (sidenavToggle)="sidenav.toggle()"></app-header>
 <div class="loader-spinner" *ngIf="!isTokenObtained">
   <mat-spinner></mat-spinner>
   <span>Loading...</span>
@@ -15,11 +14,9 @@
       <app-sidebar></app-sidebar>
     </mat-drawer>
 
-    <mat-drawer-content>
-      <router-outlet></router-outlet>
-<!--      <button matTooltip="Click to see the actions" class="add-button" mat-icon-button color="primary">-->
-<!--        <mat-icon>add</mat-icon>-->
-<!--      </button>-->
+    <mat-drawer-content [@fadeAnimation]="getRouterOutletState(o)">
+      <app-header [isButtonDisplayed]="!isShown" (sidenavToggle)="sidenav.toggle()"></app-header>
+      <router-outlet #o="outlet"></router-outlet>
     </mat-drawer-content>
 
   </mat-drawer-container>
