@@ -28,7 +28,7 @@ export class SideNavListComponent implements OnInit {
   changeState = () => {
     this.projectsAnimationState = this.projectsAnimationState === 'initial' ? 'final' : 'initial';
     localStorage.setItem('projectsAnimationState', this.projectsAnimationState);
-  };
+  }
 
   onAddProject() {
     this.matDialog.open(AddProjectDialogComponent, {

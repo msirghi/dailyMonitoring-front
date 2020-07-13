@@ -90,7 +90,7 @@ export class HeaderComponent implements OnInit {
 
   quickTodoAddHandler() {
     this.dialog.open(QuickTodoDialogComponent, {
-      width: '300px'
+      width: '400px'
     });
   }
 
