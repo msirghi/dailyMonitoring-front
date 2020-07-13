@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatInput } from '@angular/material';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProjectUserService } from '../../projects/projectUser.service';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-edit-task-dialog',
@@ -19,7 +20,8 @@ export class EditTaskDialogComponent implements OnInit, OnDestroy, AfterViewInit
   constructor(public dialogRef: MatDialogRef<EditTaskDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data,
               private cdr: ChangeDetectorRef,
-              private projectUserService: ProjectUserService) {
+              private projectUserService: ProjectUserService,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -54,8 +56,9 @@ export class EditTaskDialogComponent implements OnInit, OnDestroy, AfterViewInit
   }
 
   onSubmit() {
+    const userId = this.selectedUser ? this.selectedUser.id : this.authService.getUserId();
     if (this.taskForm.valid) {
-      this.dialogRef.close({ name: this.taskForm.controls.name.value, userId: this.selectedUser.id });
+      this.dialogRef.close({ name: this.taskForm.controls.name.value, userId });
     }
   }
 

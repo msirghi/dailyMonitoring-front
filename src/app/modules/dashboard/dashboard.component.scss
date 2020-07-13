@@ -9,6 +9,15 @@
   }
 }
 
+.title-wrapper {
+  display: flex;
+
+  & h3 {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .widget-card {
   width: 200px;
   margin: 1vw;
